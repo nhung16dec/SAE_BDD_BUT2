@@ -6,4 +6,4 @@
 
 03/10 : Jo a fait un malaise, il est tombé comme un caca.
 
-03/10: Heureusement, il est encore vivant
+03/10: Malheureusement, il est encore vivant
