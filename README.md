@@ -3,3 +3,5 @@
 30/09 : Création d'un MCD.
 
 03/10 : Sauvetage de Valentin qui fait un malaise.
+
+03/10 : Jo a fait un malaise, il est tombé comme un caca.
