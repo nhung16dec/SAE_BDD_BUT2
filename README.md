@@ -5,3 +5,5 @@
 03/10 : Sauvetage de Valentin qui fait un malaise.
 
 03/10 : Jo a fait un malaise, il est tombé comme un caca.
+
+03/10: Heureusement, il est encore vivant
