@@ -4,6 +4,6 @@
 
 03/10 : Sauvetage de Valentin qui fait un malaise.
 
-03/10 : Jo a fait un malaise, il est tombé comme un caca.
+03/10 : Sauvetage de Valentin-Jo qui fait un malaise, il est tombé comme un caca.
 
-03/10: Malheureusement, il est encore vivant ce gros porc
+07/10 : Validation du MCD.
