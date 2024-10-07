@@ -2,4 +2,4 @@
 
 30/09 : Création d'un MCD.
 
-03/10 :
+03/10 : Sauvetage de Valentin qui fait un malaise.
