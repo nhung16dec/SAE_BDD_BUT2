@@ -7,3 +7,13 @@
 03/10 : Sauvetage de Valentin-Jo qui fait un malaise, il est tombé comme un caca. Heureusement il est encore vivant.
 
 07/10 : Validation du MCD.
+
+15/11 :
+
+Partage du travail :
+
+![image](https://github.com/user-attachments/assets/2ae1cf6b-fa5c-430d-8c04-13de79e1c5e0)
+
+Artur : 1
+Jo : 3
+NHUNG :2
