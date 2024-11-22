@@ -15,5 +15,5 @@ Partage du travail :
 ![image](https://github.com/user-attachments/assets/2ae1cf6b-fa5c-430d-8c04-13de79e1c5e0)
 
 Artur : 1
-Nhung :2
+Nhung : 2
 Jo : 3
