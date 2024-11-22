@@ -3,7 +3,8 @@ BUT: lister tous les titres des entrées de noms de séries Allocine de la page 
 """
 
 from html.parser import HTMLParser
-import urllib.request
+import requests
+from bs4 import BeautifulSoup
 
 # On démarre de la page n°1 des séries de Allociné
 url = "https://www.allocine.fr/series/ficheserie_gen_cserie=49.html"
