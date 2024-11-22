@@ -53,3 +53,4 @@ for i in range(nbseries):
             # On ajoute à la liste des saisons
             listeSaisons.append(lasaison)
             print(listeNOMSerie[i],":",lasaison,"saison(s)")
+"""
