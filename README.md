@@ -12,3 +12,5 @@
 ![image](https://github.com/user-attachments/assets/2ae1cf6b-fa5c-430d-8c04-13de79e1c5e0)
 
 22/11 : Création de codes python permettant de récupérer nos données sur des sites internet.
+
+29/11 : Amélioration des codes python permettant de récupérer nos données sur des sites internet.
