@@ -15,3 +15,5 @@
 
 29/11 : Amélioration des codes python permettant de récupérer nos données sur des sites internet. (Jo)
 Création un table des acteurs principaux, ainsi que leurs rôles, leurs dates de naissance. Scrapp from wikipédia (Nhung)
+
+19/12 : Création de notre database sur PgAdmin.
