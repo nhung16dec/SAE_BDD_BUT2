@@ -1,0 +1,707 @@
+personnage;acteur;episode;group;birthday
+Richard Burke;Tom Selleck;['215', '216', '218', '220', '223', '224', '313', '624', '625'];Celebrite;29 janvier 1945
+Nora Tyler Bing;Morgan Fairchild;['111', '508', '723', '724', '801'];Celebrite;3 février 1950
+Janine Lecroix;Elle Mac Pherson;['607', '608', '609', '610', '611'];Celebrite;29 mars 1963
+Charles « Helena » Bing;Kathleen Turner;['722', '723', '724'];Celebrite;
+Paul Stevens;Bruce Willis;['621', '622', '623'];Celebrite;19 mars 1955
+Amy Green;Christina  Applegate;['908', '1005'];Celebrite;25 novembre 1971
+Jill Green;Reese Witherspoon;['613', '614'];Celebrite;22 mars 1976
+Richard Crosby;Gary Oldman;['723', '724'];Celebrite;21 mars 1958
+Andrea Waltham;Jennifer Saunders;['424', '501'];Celebrite;
+Eric;Sean Penn;['806', '807'];Celebrite;17 août 1960
+Parker;Alec Baldwin;['817', '818'];Celebrite;3 avril 1958
+Steve;Jon Lovitz;['115', '914'];Celebrite;21 juillet 1957
+Will Colbert;Brad Pitt;['809'];Celebrite;18 décembre 1963
+Melissa Warburton;Winona Ryder;['720'];Celebrite;29 octobre 1971
+Jean-Claude Van Damme;Jean-Claude Van Damme;['213'];Celebrite;
+Susie Moss;Julia Roberts;['213'];Celebrite;
+Stephanie Schiffer;Chrissie Hynde;['206'];Celebrite;
+Dr Rosen;Noah Wyle;['117'];Celebrite;
+Erica Ford;Brooke Shield;['212'];Celebrite;
+Dr Mitchell;George Clooney;['117'];Celebrite;6 mai 1961
+Rob Donan;Chris Isaak;['212'];Celebrite;26 juin 1956
+Cassie;Denise Richards;['719'];Celebrite;
+Jill Goodacre;Jill Connick;['107'];Celebrite;
+Cecilia Monroe;Suzan Sarandon;['715'];Celebrite;4 octobre 1946
+Tommy;Ben Stiller;['322'];Celebrite;30 novembre 1965
+Mackenzie;Dakota Fanning;['1014'];Celebrite;23 février 1994
+Leonard Haze;Jeff Goldblum;['915'];Celebrite;22 octobre 1952
+Malcolm;David Arquette;['303'];Celebrite;8 septembre 1971
+Sandy;Freddie Prinze Jr.;['906'];Celebrite;
+Caroline Duffy;Lea Thompson;['206'];Celebrite;31 mai 1961
+Ryan;Charlie Sheen;['223'];Celebrite;3 septembre 1965
+Jamie Buchman;Helen Hunt;['116'];Celebrite;15 juin 1963
+Earl;Jason Alexander;['713'];Celebrite;
+Charlton Heston;Charlton Heston;['414'];Celebrite;4 octobre 1923
+Thomas;Robin Williams;['324'];Celebrite;21 juillet 1951
+Turdie Styler;Turdie Styler;['810'];Celebrite;
+Isabella Rossellini;Isabella Rossellini;['305'];Celebrite;18 juin 1952
+Sarah Ferguson;Sarah Ferguson;['423'];Celebrite;15 octobre 1959
+Jay Leno;Jay Leno;['111'];Celebrite;28 avril 1950
+Vendeur de souvenirs;Richard Branson;['423'];Celebrite;18 juillet 1950
+Ralph Lauren;Ralph Lauren;['608'];Celebrite;14 octobre 1939
+Gary Collins;Gary Collins;['504'];Celebrite;30 avril 1938
+Roy;Danny DeVito;['1011'];Celebrite;17 novembre 1944
+Tim;Billy Crystal;['324'];Celebrite;14 mars 1948
+Gunther;James Michael Tyler;['209', '219', '221', '222', '307', '308', '310', '311', '312', '313', '314', '316', '318', '319', '321', '322', '405', '406', '408', '409', '410', '416', '419', '420', '422', '502', '506', '507', '521', '603', '605', '612', '613', '614', '617', '622', '623', '710', '720', '723', '802', '806', '807', '815', '816', '819', '902', '904', '911', '915', '918', '920', '1012', '1014', '1017'];Incontournable;28 mai 1962
+Emma Geller;non créditée;['824', '901', '902', '905', '906', '907', '911', '912', '914', '917', '923', '1001', '1004', '1005', '1006', '1007', '1008', '1009', '1010', '1013', '1015'];Incontournable;
+Jack Geller;Elliott Gould;['102', '108', '117', '214', '216', '301', '424', '501', '508', '609', '702', '703', '713', '714', '723', '724', '801', '818', '901', '1004'];Incontournable;29 août 1938
+Judy Geller;Christina Pickles;['102', '108', '214', '216', '301', '403', '424', '501', '508', '609', '702', '714', '723', '724', '801', '818', '823', '905', '1004'];Incontournable;
+Janice Littman Guralnick;Maggie Wheeler;['105', '110', '114', '203', '224', '301', '303', '304', '306', '307', '308', '415', '512', '707', '823', '824', '921', '1015'];Incontournable;
+Mike Hanigan;Paul Rudd;['903', '904', '906', '907', '909', '912', '913', '916', '917', '923', '924', '1001', '1005', '1007', '1012', '1014', '1017'];Incontournable;6 avril 1969
+Ben Geller;Cole Mitchell Sprouse;['123', '202', '206', '220', '304', '308', '405', '418', '511', '518', '615', '709', '710', '716', '810', '812'];Incontournable;4 août 1992
+Carol Willick;Jane Sibbett;['109', '112', '114', '116', '123', '202', '211', '220', '304', '317', '418', '518', '615', '616', '716'];Incontournable;
+Emily Waltham;Helen Baxendale;['414', '415', '416', '417', '418', '419', '421', '423', '424', '501', '504', '506', '520'];Incontournable;7 juin 1970
+Susan Bunch;Jessica Hecht;['102', '109', '112', '114', '116', '123', '202', '211', '220', '304', '418', '616'];Incontournable;28 juin 1965
+Dick;non crédité;['321', '322', '323', '402', '414', '422', '503', '508', '512', '519', '620'];Incontournable;31 mai 1950
+Estelle Leonard;June Gable;['123', '210', '219', '322', '510', '604', '621', '719', '822', '1004'];Incontournable;
+Marcel;Singe;['110', '115', '116', '117', '118', '119', '121', '212', '213'];Incontournable;
+Frank Jr Buffay;Giovanni Ribisi;['206', '221', '305', '318', '411', '412', '417', '503', '1002'];Incontournable;17 décembre 1974
+Professeur Charlie Wheeler;Aisha Tyler;['920', '921', '922', '923', '924', '1001', '1002', '1005', '1006'];Incontournable;18 septembre 1970
+Yasmine;non crédité;['321', '323', '402', '408', '414', '503', '511', '512', '620'];Incontournable;31 mai 1950
+Ursula Buffay;Lisa Kudrow;['116', '117', '303', '401', '513', '614', '714', '806'];Incontournable;30 juillet 1963
+Tag Jones;Eddie Cahill;['704', '705', '708', '709', '712', '714', '802'];Incontournable;15 janvier 1978
+Mona;Bonnie Somerville;['801', '805', '806', '808', '811', '815', '817'];Incontournable;
+Julie;Lauren Tom;['124', '201', '202', '204', '207', '208', '210'];Incontournable;4 août 1961
+Kathy;Paget Brewster;['405', '406', '407', '408', '411', '413'];Incontournable;
+Pete Becker;Jon Favreau;['318', '319', '321', '322', '323', '324'];Incontournable;19 octobre 1966
+Alice Knight ep. Buffay;Debra Jo Rupp;['318', '411', '412', '417', '418', '503'];Incontournable;
+Mark;Steven Eckholdt;['311', '312', '314', '315', '319', '1014'];Incontournable;
+David;Hank Azaria;['110', '711', '906', '922', '923'];Incontournable;25 avril 1964
+Elizabeth Stevens;Alexandra Holden;['618', '619', '621', '622', '624'];Incontournable;30 avril 1977
+Barry Farber;Mitchell Whitfield;['102', '119', '120', '224', '616'];Incontournable;
+Joshua Bergen;Tate Donovan;['413', '414', '416', '418', '420'];Incontournable;25 septembre 1963
+Mr Heckles;Larry Hankin;['107', '116', '119', '203', '306'];Incontournable;
+Mr Treeger;Michael G. Hagerty;['203', '209', '404', '417', '803'];Incontournable;10 mai 1954
+Paolo;Cosimo Fusco;['107', '111', '112', '201'];Incontournable;23 septembre 1962
+Erica;Anna Faris;['1009', '1013', '1016', '1017'];Incontournable;29 novembre 1976
+Mr Zelner;Steve Ireland;['517', '709', '817', '911', '1014', '1015'];Recurrent;
+Dr Long;Amanda Carlin;['803', '813', '814', '822', '823', '824'];Recurrent;
+Gary;Michael Rapaport;['516', '517', '520', '521'];Recurrent;20 mars 1970
+Dr Leonard Green;Ron Leibman;['222', '307', '808', '1013'];Recurrent;11 octobre 1937
+Jasmine;Cynthia Mann;['101', '112', '305', '316'];Recurrent;18 octobre 1940
+Sophie;Laura Dean;['315', '320', '403', '409'];Recurrent;27 mai 1963
+Phoebe Abbott;Teri Garr;['325', '401', '411'];Recurrent;11 décembre 1944
+Joanna;Alison LaPlaca;['320', '403', '409'];Recurrent;
+Eddie Minowick;Adam Goldberg;['217', '218', '219'];Recurrent;25 octobre 1970
+Bonnie;Christine Taylor;['324', '325', '401'];Recurrent;
+Kate Miller;Dina Meyer;['319', '320', '322'];Recurrent;22 décembre 1968
+Sandra Green;Marlo Thomas;['211', '222', '820'];Recurrent;
+Danny, le yeti;George Newbern;['506', '507', '510'];Recurrent;30 décembre 1964
+Doug;Sam McMurray;['324', '512', '811'];Recurrent;15 avril 1952
+Marshall Talmant;Reg Rogers;['319', '320', '322'];Recurrent;
+Steve;Phill  Lewis;['911', '915', '918'];Recurrent;4 septembre 1968
+Bob le marrant;Vincent Ventresca;['110', '210'];Recurrent;29 avril 1966
+Chloe;Angela Featherstone;['315', '316'];Recurrent;
+Dr Horton;Roark Critchlow;['212', '218'];Recurrent;11 mai 1963
+Stu;Fred Stoller;['410', '808'];Recurrent;
+Lauren;Jennifer Milmore;['320', '322'];Recurrent;
+Mrs Hanigan;Christine Rose;['907', '1012'];Recurrent;
+Trent;Jeffrey D. Brooks;['318', '322'];Recurrent;
+Mr Hanigan;Gregory Itzin;['907', '1012'];Recurrent;20 avril 1948
+Kim Clozzi;Joanna Gleason;['518', '608'];Recurrent;2 juin 1950
+Kiki;Michele Maika;['104', '306'];Recurrent;
+Serveur gay au restaurant;Sam Pancake;['816', '914'];Recurrent;
+Dr Ledbetter;Michael Ensign;['509', '514'];Recurrent;13 février 1944
+Mr Douglas;Dorien Wilson;['116', '223'];Recurrent;
+Mlle Tedlock;Fritzi Burr;['115', '224'];Recurrent;
+Robbie;Christopher Miranda;['102', '120'];Recurrent;30 juillet 1970
+Jake;Troy Norton;['718', '722'];Recurrent;
+Claudia;Monique Edwards;['905', '910'];Recurrent;
+Ken;Brian Chenoweth;['905', '910'];Recurrent;
+Mr Waltham;Paxton Whitehead;['413', '414'];Recurrent;
+Infirmière à l’hôpital;Evie Peck;['803', '811'];Recurrent;
+Gavin Mitchell;Dermot Mulroney;['911', '912', '913'];Notoire;31 octobre 1963
+Steven Waltham;Tom Conti;['424', '501'];Notoire;22 novembre 1941
+Molly;Melissa George;['912', '913'];Notoire;6 août 1976
+Terry;Max Wright;['109', '206'];Notoire;2 août 1943
+Russel;Ron Glass;['602', '604'];Notoire;10 juillet 1945
+Mr Kaplan Jr;Shelley Berman;['310', '311'];Notoire;
+Frank Sr Buffay;Bob Balaban;['513'];Notoire;
+Russ;Snaro;['210'];Notoire;2 novembre 1966
+Mindy Hunter;Jennifer Grey;['120'];Notoire;26 mars 1960
+Carol Willick;Anita Barone;['102'];Notoire;25 septembre 1964
+Tim Burke;Michael Vartan;['408'];Notoire;27 novembre 1968
+Felicity;Olivia Williams;['424'];Notoire;
+Duncan;Steve Zahn;['204'];Notoire;13 novembre 1967
+Ginger;Sherilyn Fenn;['314'];Notoire;1er février 1965
+Katie;Soleil Moon Frye;['515'];Notoire;
+Kristen Leigh;Gabrielle Union;['717'];Notoire;29 octobre 1972
+Erin;Kristin Davis;['707'];Notoire;23 février 1965
+Dr Benjamin Hobart;Greg Kinnear;['1006'];Notoire;17 juin 1963
+Cheryl;Rebecca Romijn;['406'];Notoire;6 novembre 1972
+Dr Franzblau;Jonathan Silverman;['123'];Notoire;5 août 1966
+Gardien du zoo de San Diego;Dan Castellaneta;['212'];Notoire;29 octobre 1957
+Mme Bergen;Pat Crowley;['418'];Notoire;
+Iris;Beverly Garland;['118'];Notoire;
+James Campbell;Brent Spiner;['1014'];Notoire;2 février 1949
+Wendy;Selma Blair;['910'];Notoire;
+Amanda;Jennifer Coolidge;['1003'];Notoire;28 août 1961
+Fran Devanow;Leila Kenzle;['116'];Notoire;
+Gloria Tribbiani;Brenda Vaccaro;['113'];Notoire;18 novembre 1939
+Démarcheur d’encyclopédies;Penn Jilette;['403'];Notoire;
+Mme Buffay;Laraine Newman;['221'];Notoire;
+Zack;John Stamos;['922'];Notoire;19 août 1963
+Donny Osmond;Donny Osmond;['1011'];Notoire;
+Dr Baldhadar;Harry Shearer;['121'];Notoire;23 décembre 1943
+Leslie Charleston;Leslie Charleston;['1011'];Notoire;
+Emile Alexander;Steven Harad;['307', '313', '624'];Proche;
+Réalisateur du film;Mark Roberts;['723', '724'];Proche;
+Assistant du réalisateur sur le plateau;Peter James Smith;['723', '724'];Proche;
+Clifford Burnett;Eddie McClintock;['823', '824'];Proche;27 mai 1967
+Serveuse et figurante dans la sérieDays of our lives.;Alexandra Margulies;['624', '911'];Proche;8 juin 1966
+Dr Roger;Pat Finn;['615', '616'];Proche;
+Courtière;Lisa Calderon;['616', '820'];Proche;
+Erica Jr Bing;non créditée;['1017', '1018'];Proche;
+Jack Jr Bing;non crédité;['1017', '1018'];Proche;31 mai 1950
+Mr Simon et Al Zebooker;E. J. Callahan;['404', '1015'];Proche;
+Lowell;Kyle Gass;['915'];Proche;
+Paul, le sommelier;John Allen Nelson;['101'];Proche;28 août 1959
+Roy Gublik;Michael Ray Bower;['214'];Proche;
+Aurora;Sofia Milos;['106'];Proche;27 septembre 1969
+Dina Tribbiani;Marla Sokoloff;['810'];Proche;
+Whitney;Julia Campbell;['705'];Proche;
+Fredrick;George Stults;['715'];Proche;
+Katie;Rena Sofer;['821'];Proche;
+Mindy Hunter-Farber;Marie Hupp;['224'];Proche;
+Kyle;David Sutcliffe;['705'];Proche;
+Missy Goldberg;Ellen Pompeo;['1011'];Proche;10 novembre 1969
+Franny;Clea Lewis;['101'];Proche;
+Arthur;Larry Cox;['616'];Proche;
+Josh;Brian Fish Smith;['405'];Proche;
+Jack;Paul Gleason;['616'];Proche;4 mai 1939
+Amanda;Laura Stepp;['405'];Proche;
+Strip-teaseuse;Lisa Rotondi;['422'];Proche;
+Marjorie;Christina Moore;['420'];Proche;
+Nina Bookbinder;Jennifer Grant;['116'];Proche;
+Gina Tribbiani;K. J. Steinberg;['311'];Proche;
+Cailin;Laura Cayouette;['322'];Proche;11 juillet 1964
+Dina Tribbiani;Lisa Melili;['311'];Proche;
+Colocataire d’Hayley;Nikita Ager;['904'];Proche;
+Leslie;E. G. Daily;['314'];Proche;
+Angela;Kim Gillingham;['105'];Proche;
+Hayley;Susan Ward;['904'];Proche;
+Annabel;Emily Procter;['202'];Proche;
+Melissa;Caroline Keenan;['705'];Proche;
+Elizabeth Hornswaggle;Sara Rose Peterson;['511'];Proche;
+Sandy;Sarah McDonnel;['110'];Proche;
+Sergeï;Jim Pirri;['315'];Proche;
+Don;Harry Van Gorkum;['816'];Proche;
+Julio;Carlos Gomez;['312'];Proche;
+Stuart;Joe Coyle;['711'];Proche;
+Cookie Tribbiani;Alex Meneses;['311'];Proche;12 février 1965
+Alex;Ian Meltzer;['604'];Proche;
+Frances;Audra Lindley;['209'];Proche;24 septembre 1918
+Robert;Markus Flanagan;['313'];Proche;
+Kristen;Heather Medway;['114'];Proche;
+Jason;Robert Gant;['323'];Proche;13 juillet 1968
+Kurt Rathman;Rick Fitts;['604'];Proche;
+Wayne;Andrew Bilgore;['621'];Proche;
+Femme de Poughkeepsie;Yasemin Baytok;['410'];Proche;
+Producteur de séries télévisées;Brad Koepenick;['621'];Proche;
+Vince;Matt Battaglia;['323'];Proche;
+Réalisateur de Days Of Our Lives;Evan Handler;['911'];Proche;
+Michael;Arye Gross;['207'];Proche;17 mars 1960
+Michelle;Jennifer Aspen;['913'];Proche;9 octobre 1973
+Jim Nelson;James Le Gros;['817'];Proche;
+Kash Ford;Johnny Messner;['805'];Proche;
+Shelley;Sasha Alexander;['819'];Proche;17 mai 1973
+Cynthia;Jennette Robbins;['509'];Proche;
+Comptable de Monica;Cindy Lu;['719'];Proche;
+Chandler enfant;Joshua Preston;['508'];Proche;
+Dirk;Ethan Erickson;['920'];Proche;
+Kyle Lowder;Kyle Lowder;['920'];Proche;
+Mabel;Krista Allen;['812'];Proche;5 avril 1971
+Acteur dans Days Of Our Lives;Paul Logan;['911'];Proche;
+Chip Matthews;Dan Gauthier;['402'];Proche;
+Julie Graff;Stacy Galina;['706'];Proche;
+Striker Ramorey;Eric Rutherford;['704'];Proche;
+Matthew Ashford;Matthew Ashford;['920'];Proche;
+Roger;Fisher Stevens;['113'];Proche;27 novembre 1963
+Bob;Warren Berliner;['216'];Proche;31 août 1937
+Betsy;Marissa Ribisi;['306'];Proche;
+Employé de cuisine;Amy Smallman;['410'];Proche;
+El Hombre;Joel beeson;['202'];Proche;
+Actrice dans Days of our Lives;Karma Kruschke;['212'];Proche;
+Professeur Spafford;Ken Lerner;['920'];Proche;27 mai 1948
+Drew;Michael DiMaggio;['410'];Proche;
+Tim;Kevin Rahm;['805'];Proche;7 janvier 1971
+Mike;Jamie Kaler;['410'];Proche;
+Jeannine;Wendy Schall;['312'];Proche;
+Melanie;Corinne Bohrer;['124'];Proche;
+Hope Brady;Kristian Alfonso;['615'];Proche;5 septembre 1963
+Nonnie Tribbiani;Lilyan Chauvin;['519'];Proche;6 août 1925
+Dave;Zen Gesner;['502'];Proche;
+Infirmière, actrice de Days Of Our Lives;Cynthia Graham;['704'];Proche;
+Petite amie scientifique de Ross;Sarah O’Hare;['707'];Proche;
+Infirmière, actrice de Days Of Our Lives;Renee Louise Roger;['704'];Proche;
+Dr Wesley;Kevin Spirtas;['615'];Proche;
+Adrienne Turner;Kimberley Davies;['1011'];Proche;
+Alan;Goeffrey Lower;['103'];Proche;
+Ross enfant;Edo Azram;['304'];Proche;
+Misha;Stephen Kearny;['315'];Proche;30 août 1794
+Jordan;Teck Holmes;['915'];Proche;
+Kathy;Cody Tucher;['704'];Proche;
+Chase Lassiter;Blake Reed;['919'];Proche;
+Olivia;Marisol Nichols;['919'];Proche;2 novembre 1973
+Joey Tribbiani Sr;Robert Costanzo;['113'];Proche;
+Frannie;Robyn Donny;['711'];Proche;
+Dina;Eva Amurri;['715'];Proche;15 mars 1985
+Celia;Melora Hardin;['115'];Proche;29 juin 1967
+Nancy;Hilary Matthews;['312'];Proche;
+Lorraine;Nancy Valen;['114'];Proche;
+Ethan;Stan Kirsch;['122'];Proche;15 juillet 1968
+Terry;Michael Kagan;['704'];Proche;
+Larry;Gregory Sporleder;['507'];Proche;14 avril 1964
+Infirmière à l’hôpital;Cacey Riggan;['615'];Proche;
+Tom;Jack Belts;['715'];Proche;11 avril 1929
+Mary-Theresa Tribbiani;Mimi Leiber;['311'];Proche;
+Chrissy;Symba Smith;['211'];Proche;
+Carl;Tommy Blaise;['124'];Proche;
+Bob;Jack Armstrong;['105'];Proche;
+Lizzy;Beth Grant;['103'];Proche;18 septembre 1949
+Mme Lynch;Jennifer Rhodes;['409'];Proche;
+Danielle;Lynn Clark;['120'];Proche;
+Lilian;Elinor Donahue;['108'];Proche;19 avril 1937
+Jessica Ashley;Alison Sweeney;['718'];Proche;
+Employé de Ralph Lauren;Alex Ball;['1014'];Proche;
+Vendeuse du parfumObsession;Lara Harris;['109'];Proche;
+Hillary;Missy Pyle;['608'];Proche;16 novembre 1972
+Nonna;Penny Santon;['311'];Proche;
+Kristen;Lisa Thornbill;['804'];Proche;
+Monica enfant;Sierra Dawn Hill;['304'];Proche;
+Mr Franklin;Geoff Pierson;['805'];Proche;16 juin 1949
+Tante Millie;Darlene Kardan;['711'];Proche;
+Colleen;Kellie Waymire;['1002'];Proche;
+Marsha;Merrill Merkoe;['102'];Proche;
+Jade;Britteny Powell;['205'];Proche;4 mars 1972
+Bob;Tom Bailey;['510'];Proche;
+Laura;Maria Pitillo;['1007'];Proche;8 janvier 1966
+Rick;Jason Brooks;['404'];Proche;10 mai 1966
+Oncle Dan;John C. Moskoff;['818'];Proche;
+Leslie Buffay;Allisyn et Ashley Arm;['1002'];Proche;25 avril 1996
+Chandler Buffay;Sierra Marcoux;['1002'];Proche;
+Tante Lisa;Ellen Gerstein;['818'];Proche;29 avril 1950
+Frank Jr Jr Buffay;Dante Pastula;['1002'];Proche;
+Bob;Chris Parnell;['805'];Proche;
+Shelley;Nancy Cassaro;['108'];Proche;
+Mary-Angela Tribbiani;non créditée;['311'];Proche;
+Dana;Bess Meyer;['618'];Proche;
+Allessandro;Taylor Negron;['409'];Proche;1er août 1957
+Mr Posner;Richard Fancy;['409'];Proche;
+Bill;Jim Meskimen;['1002'];Proche;
+Andrew;Jack Ong;['411'];Proche;6 novembre 1940
+Mrs Potter;Rhoda Gemignani;['404'];Proche;
+Scott Alexander;Steve Park;['223'];Proche;
+Jeannie;Mary-Pat Green;['223'];Proche;
+Nancy;Megan Ward;['518'];Proche;
+Burt;Richard Roat;['618'];Proche;
+Joanne;Marianne Hagan;['104'];Proche;
+Lowell;Stuart Fratkin;['108'];Proche;
+Sarah;Anna Parisse;['1009'];Proche;31 juillet 1975
+Heather;Cheryl Kennard;['912'];Proche;
+Rhonda;Sherri Sheperd;['411'];Proche;
+Mary Ellen;Dedee Pfeiffer;['903'];Proche;1er janvier 1964
+Leslie;Leesa Btyte;['104'];Proche;
+Assistante un peu dingue de Chandler à Tulsa;Irene White;['909'];Proche;
+Mrs McKenna;Janet Horbert;['902'];Proche;13 janvier 1956
+Eldad;Josh Cox;['619'];Proche;
+Mr Thompson;Steve Hytner;['624'];Proche;
+Metteur en scène de Joey;Joe Colligan;['919'];Proche;
+Paula;Jenifer Lewis;['103'];Proche;25 janvier 1957
+Lydia;Louisa Abernathy;['618'];Proche;
+Scott;Chip Chinery;['411'];Proche;
+Fausse Monica;Claudia Shears;['121'];Proche;
+Mel;David Moreland;['618'];Proche;
+Phil;Steve Dark;['324'];Proche;
+Stevens;Joe O’Connor;['324'];Proche;
+Katherine;Adria Tennor;['820'];Proche;
+Jeanette;Cynthia Newman;['922'];Proche;
+Réceptionniste du centre de massage;Debra Azar;['921'];Proche;
+Professeur Sherman;Dan Desmond;['922'];Proche;
+Dr Biely;Cathy Lind Hayes;['1006'];Proche;
+Dr Li;Ming Lo;['1006'];Proche;
+Joan;Carla Touts;['1009'];Proche;19 août 2005
+Gerson;Brian Buckner;['122'];Proche;
+Responsable chez Empire Office Suplies;Joyce Guy;['713'];Proche;
+Petrie;Darryl Sivad;['122'];Proche;
+Casey;non créditée;['407'];Proche;
+Pompier, brancardier de Chandler et vampire dans une vidéo X;Douglas Looper;['323', '508', '614'];Anodin;
+Directrice de casting, gérante d’un magasin de robes de mariée et démonstratrice de parfums;Kim Harris;['604', '717', '922'];Anodin;
+Directeur de casting, client de cabaret, serveur;Joe Everett Michaels;['604', '722', '923'];Anodin;
+Client du Central Perk, serveur au restaurant et responsable de jeu;Matthew Mullany;['612', '801', '1011'];Anodin;
+Officier d’état civil;Peter Eyre;['424', '501'];Anodin;
+Ben et Mr Weinberg;Jackie Bright;['123', '224'];Anodin;
+Isaac;Maury Ginsberg;['315', '316'];Anodin;
+Voisin gourmand de Monica et conquête potentielle de Rachel;Ashley L. Clark;['709', '811'];Anodin;1er décembre 1988
+Croupier du casino;Rick Pasqualone;['523', '601'];Anodin;
+Professeur Ted Friesell;Jim Bentley;['411', '619'];Anodin;
+Ami d’Elizabeth à l’Université;Hunter Cochran;['619', '624'];Anodin;
+Hôtesse d’une chapelle;Nina Mann;['524', '601'];Anodin;
+Randall;Thomas Lennon;['523', '524'];Anodin;9 août 1970
+Réceptioniste de l’hôtel;non crédité;['802'];Anodin;31 mai 1950
+Cathy;Lisa Roberts;['213'];Anodin;1er janvier 1965
+Gail;Lou Thornton;['214'];Anodin;
+Jonathan;Tim Bohn;['214'];Anodin;
+Père Karabasos;Steve Suskind;['724'];Anodin;
+Responsable de restaurant;Patrick Kerr;['214'];Anodin;
+Gert;Rachel Snow;['801'];Anodin;
+Carl;Louis Mandylor;['617'];Anodin;13 septembre 1966
+Dennis Phillips;Jim Piddock;['801'];Anodin;
+Colocataire potentielle;Brooke Boisse;['603'];Anodin;
+Ashley;Kendall Herbert;['801'];Anodin;
+Amanda;Claudia Stedelin;['723'];Anodin;
+Réalisateur de films;Christopher Darga;['604'];Anodin;
+Gentleman de l’avion;Hugh Laurie;['424'];Anodin;11 juin 1959
+Margha;Susanna Voltaire;['309'];Anodin;
+Invité plus agé et ivre;Heathcote Williams;['424'];Anodin;15 novembre 1941
+Julie Horger;Rachael Harris;['823'];Anodin;12 janvier 1968
+Grand mec;Lex Medlin;['610'];Anodin;
+Lelani Mayolanofavich;Emily Osmont;['806'];Anodin;
+Garde du plateau de tournage;Steven M. Porter;['213'];Anodin;
+Employée de Virgin Atlantic;Jane Carr;['424'];Anodin;
+Dr Harad;Sam Anderson;['503'];Anodin;
+Chanteur du groupe Swing Kings;Dane Anthony;['801'];Anodin;
+Femme des admissions;Alaina Reed Hall;['117'];Anodin;
+Gouvernante de la famille Waltham;June Whitfield;['424'];Anodin;
+Melinda;Steffani Brass;['801'];Anodin;
+Organisatrice de mariages;Merrin Dungey;['622'];Anodin;
+Mr Rastatter;Michael McKean;['208'];Anodin;
+Serveur au restaurant;Daniel Caltagirone;['424'];Anodin;
+Lydia;Leah Remini;['123'];Anodin;
+Future maman, insulte son mari;Debi Mazar;['823'];Anodin;
+Infirmière du cabinet Burke;Marcy Goldman;['408'];Anodin;
+Marc Horger;Tim Dekay;['823'];Anodin;
+Fan;Larry Joe Campbell;['614'];Anodin;
+Dresseur de Marcel;Seth Isler;['213'];Anodin;
+Roy;Carlo Imperato;['123'];Anodin;
+Réceptionniste à l’hôpital;Jill Matson;['617'];Anodin;
+Stanley;John Kassir;['522'];Anodin;
+Danseuse très souple;Sybil Azur;['610'];Anodin;
+Voisine du dessus de Monica;Amy Hill;['709'];Anodin;
+Directrice de casting pour un film;Mo Gaffney;['719'];Anodin;
+Directeur de casting pour un film;Daniel Hagan;['513'];Anodin;
+Mr Bergen;John Bennett Perry;['418'];Anodin;
+Sid Littman;Maurice Godin;['823'];Anodin;
+Danseuse expérimentée sur une plate-forme;Sandra Plazinic;['610'];Anodin;
+Femme du propriétaire du pressing;Susie Park;['622'];Anodin;
+Guru Saj;Kevin McDonald;['323'];Anodin;
+Sarah;Audrey Wasilewski;['923'];Anodin;
+Ballerine;Rachel David;['806'];Anodin;
+Gary;Jonathan Floyd;['709'];Anodin;
+Cow-girl;Ivy Malone;['806'];Anodin;
+Photographe du mariage;Allen Lulu;['801'];Anodin;
+Employée de la clinique du sommeil;Thea Mann;['420'];Anodin;
+Teinturier, propriétaire du pressing;Ilia Volok;['622'];Anodin;
+Petit garçon malin;Daniel Smith;['806'];Anodin;
+Robin;Catherine Bell;['206'];Anodin;
+Docteur à l’hôpital;Ron Recasner;['617'];Anodin;
+Mr Lipson;Fred Willard;['212'];Anodin;
+Frankie;Buck Kartalian;['201'];Anodin;
+Kory Weston;Ivana Milicevic;['917'];Anodin;
+Réalisateur du film de Martin Scorsese;Scott Adsit;['719'];Anodin;
+Conducteur de la voiture;non crédité;['802'];Anodin;
+Photographe;Roger Eschbaker;['705'];Anodin;
+Dr Oberman;T. J. Thyne;['503'];Anodin;
+Spectateur d’une pièce de théâtre;non crédité;['322'];Anodin;
+Bijoutier;Olivier Muirhead;['623'];Anodin;
+Max;Wayne Pere;['110'];Anodin;
+Infirmière de l’hôpital;Sarah Rush;['823'];Anodin;
+Technicien de plateau de cinéma;Matt Bellner;['604'];Anodin;
+Professeur de self-défense;Mongo Brownle;['617'];Anodin;
+Étudiant à l’université;Michael Naughton;['604'];Anodin;
+Dr Miller;Michael Monks;['522'];Anodin;
+Acteur dans la publicité Monkeyshine;Sean Masterson;['212'];Anodin;
+Spectatrice d’une pièce de théâtre;non créditée;['322'];Anodin;
+Becky;Jennifer Sommerfield;['206'];Anodin;
+Comédienne de théâtre;Alex Borstein;['920'];Anodin;
+Futur papa, insulte sa femme;Jimmy Palumbo;['823'];Anodin;
+Médecin hospitalier;Victor Raider-Wexler;['206'];Anodin;
+Hilda;Jean St James;['704'];Anodin;
+Vendeuse de robes de mariées;Anne Betancourt;['420'];Anodin;
+Directeur de Casting;Jason Graae;['219'];Anodin;
+Petit garçon fan de Phoebe;Tahl Mowry;['212'];Anodin;
+Agent immobilier;Robin Krieger;['907'];Anodin;
+Bobby Corso;Marc Rose;['810'];Anodin;
+Lesbienne qui drague Phoebe;Lea DeLaria;['211'];Anodin;
+Réceptionniste de l’hôpital;Henriette Mantel;['823'];Anodin;
+Coursier qui apporte le script à Joey;Brian Posehn;['218'];Anodin;
+Contrôleur de train;Vic Helford;['410'];Anodin;
+Bijoutière;Janet S. Blake;['623'];Anodin;
+Femme dans le train;Shannon Maureen Brown;['410'];Anodin;
+Directeur de comédie musicale;Obba Babatunde;['312'];Anodin;
+Amber;Vanessa Sandin;['218'];Anodin;
+Mariée que Chandler embrasse;non créditée;['802'];Anodin;
+Réceptionniste de l’hôpital;Jo Nell Kennedy;['823'];Anodin;
+Dan;Patrick Fabian;['503'];Anodin;
+La femme avec de faibles contractions;Karin Co;['823'];Anodin;
+Megan Bailey;Andrea Bendewald;['717'];Anodin;
+Femme dans le clip de Phoebe;Linda Lutz;['217'];Anodin;
+Dr Zane;Cindy Katz;['412'];Anodin;
+Productrice du clip vidéo de Phoebe;Dee Dee Rescher;['217'];Anodin;
+Alan Lewis;Kyle Howard;['718'];Anodin;
+Figurante dans Days of our lives;Heather Sims;['911'];Anodin;
+Professeur Jarvis Oberblau;John Balma;['924'];Anodin;
+Serveur au restaurant;Elliot Woods;['212'];Anodin;
+Eric;John Lehr;['306'];Anodin;
+Sonya;Lori Alan;['913'];Anodin;
+Homme de Pie in the hood;Barry Heins;['217'];Anodin;
+Garde du plateau de tournage;Lawrence A. Mandley;['212'];Anodin;
+Client qui désire épouser sa petite amie;Brian Dunkleman;['623'];Anodin;
+Productrice de la pièce de Leonard Haze;Suzanne Ford;['915'];Anodin;
+Caméraman sur le tournage de À toute allure;John C. Mc Donnel;['522'];Anodin;
+Caitlin;Kristin Dutillo;['519'];Anodin;
+Gary, roi du matelas;Mark Cohen;['307'];Anodin;
+Médecin de Joey;Iqbal Theba;['503'];Anodin;
+Cliente du Central Perk;Megan Linder;['913'];Anodin;
+Responsable du plateau de télévision;Patrick Bristow;['610'];Anodin;
+Rendez-vous galant de Richard;Gina Hecht;['313'];Anodin;
+Jim;Hugh Dane;['206'];Anodin;
+Cliente du Central Perk avec une amie;DeAnna Steele;['913'];Anodin;
+Tilly;Mary Gallagher;['218'];Anodin;
+Directrice de casting;Anne Johnson;['915'];Anodin;
+Infirmière en salle d’accouchement;Heidi Beck;['503'];Anodin;
+Mère de Pete;Carole Goldman;['323'];Anodin;
+Chanteur matinal;Michael Connor;['419'];Anodin;
+Emily;Audrie Neenan;['216'];Anodin;
+Ned Morse;Vince Vieluf;['718'];Anodin;
+Precious;Anne Dudek;['1001'];Anodin;
+Dr Rhodes;Richard Gant;['323'];Anodin;
+Serveur dans un grand restaurant;Scott Stewart;['210'];Anodin;
+Réceptionniste dans un institut de beauté;Kristen Ariza;['913'];Anodin;
+Une passante dans la rue;Charity Nicole James;['605'];Anodin;
+Jenny Boon;Tammy Townsend;['810'];Anodin;
+Scénariste de Days of Our Lives;Jim Reilly;['218'];Anodin;
+Propriétaire de la Porsche;Kevin Ruf;['605'];Anodin;
+Meg;Janelle Paradee;['602'];Anodin;
+Juge qui pourrait annuler le mariage;Conchata Ferrel;['605'];Anodin;
+Médecin de l’hôpital;Michael Winters;['508'];Anodin;
+Karin;Tembi Locke;['602'];Anodin;
+Arik;Stephen Samuels;['216'];Anodin;
+Gynécologue d’Erica;John Rubinstein;['1017'];Anodin;
+Domestique de la famille Bing;Alec Mapa;['508'];Anodin;
+Un passant dans la rue;Shane Nickerson;['605'];Anodin;
+Tatoueuse;Josie DiVincenzo;['216'];Anodin;
+Serveuse au Central Perk;Christy L. Medrano;['306'];Anodin;
+Tia;Elisabeth Sjoli;['119'];Anodin;
+Joel;Peter Spears;['224'];Anodin;
+Agent immobilier de Chandler et Monica;Helen Eigenberg;['1014'];Anodin;
+Infirmière à l’hôpital;Carole Gutierrez;['1017'];Anodin;
+Luisa Gianetti;Megan Cavanagh;['119'];Anodin;
+L’homme dans la voiture de sport;Wayne Sherwood;['714'];Anodin;
+Vendeur de déguisements;Sean Corvelle;['710'];Anodin;
+Un passant futé dans la rue;non crédité;['605'];Anodin;
+Infirmière à l’accueil de l’hôpital;Brenda Isaacs-Booth;['503'];Anodin;
+Andrea;Carolyn Lowery;['108'];Anodin;
+Vétérinaire qui soigne le canard;Robert Koch;['422'];Anodin;
+Un passant curieux dans la rue;Dennis Singletary;['605'];Anodin;
+Amy;Susan Yeagley;['613'];Anodin;
+Maître d’hôtel du restaurant Michelle’s;Terry Rhoads;['710'];Anodin;
+Vendeuse dans un magasin de canapés;Aloma Wright;['516'];Anodin;
+Une passante dans la rue;Antoinette Spolar;['521'];Anodin;
+Femme en lune de miel;Laurie Naughton;['803'];Anodin;
+Client du Central Perk;Lex Arquette;['613'];Anodin;
+Tom Gordon;Ernie Grunwald;['917'];Anodin;
+Professeur de cuisine pour débutants;Molly Hagan;['821'];Anodin;
+Jen;Samantha Smith;['517'];Anodin;
+Mme Burkart;Gretchen Wyler;['406'];Anodin;
+Grand-mère assise sur un banc;Janice Davies;['204'];Anodin;
+Acheteur de sapins de Noël;Gene Craine;['310'];Anodin;
+Kara;Lise Simms;['512'];Anodin;
+Une acheteuse potentielle;Victoria L.Kelleher;['521'];Anodin;
+Sebastian;Scott Paetty;['619'];Anodin;
+L’horrible femme;Camille Saviola;['105'];Anodin;
+Collègue du serveur gay au restaurant;Terence Winter;['816'];Anodin;
+Buddy Boyle;Danny Dayton;['203'];Anodin;
+Livreur de lit;Rosey Brown;['307'];Anodin;
+Ginger;Robyn Pedretti;['510'];Anodin;
+Petite fille, voisine de Ross;Devyn La Bella;['517'];Anodin;
+Agent de voyage;Manao DeMuth;['1018'];Anodin;
+Le Pasteur;Candice Gingrich;['211'];Anodin;
+Professeur de littérature pour adultes;Scott Mosenson;['509'];Anodin;
+Elève du cours de comédie de Joey;Shashi Bhatia;['307'];Anodin;
+Rita;Mary Margaret Lewis;['1014'];Anodin;
+Fille d’un client de Phoebe;Suzanna Lanza;['702'];Anodin;
+Cal;Khalil Kain;['307'];Anodin;
+Client du restaurant Michelle’s;Barry Wiggins;['710'];Anodin;
+Brenda;Arden Myrin;['807'];Anodin;
+Docteur Oberman;Joan Pringle;['102'];Anodin;
+Planificatrice du mariage;Mindy Sterling;['224'];Anodin;
+Elève de Ross;Matthew Yang King;['812'];Anodin;
+Vieil homme, voisin de Ross;Ralph Manza;['517'];Anodin;
+Serveuse dans le cabaret d’Helena;Alexis Arquette;['722'];Anodin;
+Cliente du Central Perk;Jo Jean Pagano;['112'];Anodin;
+Un passant pauvre qui prend le bus;Lee Arenberg;['510'];Anodin;
+L’étudiante du rayon paléontologie;Jessica A. O’Sullivan;['707'];Anodin;
+Client du Central Perk;J. D. Lewis;['612'];Anodin;
+Baby-sitter potentielle d’Emma;Susan slome;['906'];Anodin;
+Livreur de pizza;Sean Whalen;['104'];Anodin;
+Maître d’hôtel dans un restaurant;Kevin Farrell;['905'];Anodin;
+Maître d’hôtel;Tom Dugan;['1014'];Anodin;
+Sarah Tuttle;Mae Whitman;['310'];Anodin;
+Prostituée engagée par Monica;Jackie Debatin;['808'];Anodin;
+Étudiante qui suit les cours de littérature;Alexia Roberts;['509'];Anodin;
+Assistant de casting;Alex Craig Mann;['1013'];Anodin;
+Médecin à l’hôpital;Mark Daniel Cade;['823'];Anodin;
+Responsable des changements de noms;Graig Robinson;['1014'];Anodin;
+Agent d’embarquement à l’aéroport;Anthony Cistaro;['1018'];Anodin;
+Serveur du restaurant où Rachel et Michael dînent;Marcus D. Jacques;['207'];Anodin;
+Serveuse dans un restaurant;Caryn Ward;['812'];Anodin;
+Assistant bibliothèquaire;Doug Budin;['707'];Anodin;
+Tony;Mathew Kaminsky;['402'];Anodin;
+Cliente du Central Perk;Stephanie Dicker;['722'];Anodin;
+L’étudiant du rayon paléontologie;Nicholas Thomas;['707'];Anodin;
+Professeur Klarik;Robert Alan Bluth;['924'];Anodin;
+Carl;Peter de Louise;['221'];Anodin;
+Pompier Ed;Joel Gretsch;['114'];Anodin;
+Passante fumeuse;Nicole Robinson;['516'];Anodin;
+Employée de la compagnie aérienne;Kerrie Klark;['124'];Anodin;
+Mrs Nancy Oberblau;Alison Shanks;['924'];Anodin;
+Homme dans le coma;David Sederholm;['111'];Anodin;
+Invité à la fête de Monica;Lewis Dix;['222'];Anodin;
+Client du restaurant au téléphone;Barry Diamond;['207'];Anodin;
+Employée du casino;Gabi Simson;['524'];Anodin;
+Stephanie;Alex Kapp Horner;['602'];Anodin;
+Ellen;Jane Lynch;['1015'];Anodin;
+Femme à la table;Joanna Sayler;['612'];Anodin;
+Infirmière Kitty;Cleo King;['901'];Anodin;
+Invitée à la fête de Monica;Nancy Rubin;['222'];Anodin;
+Marge;Wendee Cole;['713'];Anodin;
+Pompier Charlie;Jay Acovone;['114'];Anodin;
+Pompier Dave;Larry Pindexter;['114'];Anodin;
+Arbitre de combat ultime;John McCarthy;['324'];Anodin;
+Infirmière qui s’occupe de Nana;Marylin Tokuda;['108'];Anodin;
+Serveur dans un restaurant;Dan Bucatinsky;['905'];Anodin;
+Jester;Simon Harvey;['307'];Anodin;
+Sarah;Tori McPetrie;['624'];Anodin;
+Mr Adelman;Phil Leeds;['211'];Anodin;
+Gynécologue de Phoebe;Shirley Jordan;['417'];Anodin;
+Vendeur dans un magasin de canapés;Mark Fite;['516'];Anodin;
+Arthur;Nicky Katt;['221'];Anodin;
+JC Rosten;Patty Tiffany;['116'];Anodin;
+Charla Nichols;Kyla Pratta;['310'];Anodin;
+Voleur;Marc Unger;['402'];Anodin;
+Infirmière à l’hôpital;Hira Ambrosino;['1013'];Anodin;
+Lisa;Jacqueline Schultz;['624'];Anodin;
+Tank Abbott;Tank Abbott;['324'];Anodin;
+Le garçon dans la bibliothèque;Andy Breuster;['707'];Anodin;
+Manny;Jonathan Slavin;['917'];Anodin;
+Responsable de la bibliothèque universitaire;Michael D. Roberts;['707'];Anodin;
+Professeur de Lamaze;Michele Lamar Richards;['116'];Anodin;
+Employée d’accueil de l’hôtel;Anita Dashiell;['803'];Anodin;
+Krista;Julie Lauren;['510'];Anodin;
+Voisin de Ross à la recherche de Joey;Marc Goldsmith;['517'];Anodin;
+Bénévole du Téléthon sur PBS;John R. McLaughlin;['504'];Anodin;
+Gamin surdoué;Miles Marisco;['411'];Anodin;
+Responsable de l’hôpital;Ethel Ayler;['319'];Anodin;
+Mrs Verhoeven;Dale Raoul;['807'];Anodin;
+Officier Petty;Chuck Martinez;['722'];Anodin;
+Bratty Boy;Benjamain Caya;['104'];Anodin;
+Assistant réalisateur dans un film où joue Joey;Carlos LaCamera;['414'];Anodin;
+Hoshi;James Hong;['324'];Anodin;
+Passagère dans l’avion;Michelle Pereira;['1018'];Anodin;
+Karen Lambert;Hope Allen;['404'];Anodin;
+Employé de la compagnie aérienne;John O Brien;['803'];Anodin;
+Hôtesse de l’air sur le vol pour Paris;non créditée;['1018'];Anodin;
+Passager nerveux dans l’avion;Jim Rash;['1018'];Anodin;
+Ronni;Lee Carlington;['113'];Anodin;
+Réalisateur de films;Tim Edward Rhoze;['1013'];Anodin;
+Raymond;Matt Weinberg;['518'];Anodin;
+Client critique du restaurant Javu;Johnny Sneed;['919'];Anodin;
+Peter;Ken Weiler;['402'];Anodin;
+Owen;Daryl Sabara;['1002'];Anodin;
+Présentatrice de la cérémonie des Soapies;Mc Kenzie Westmore;['718'];Anodin;
+Gardien au service comptabilité;Christopher Caroll;['404'];Anodin;
+Catherine;Kat Sawyer;['818'];Anodin;
+Barman;Kevin Brief;['909'];Anodin;
+Petit ami de Mona;Mark Lutz;['817'];Anodin;
+L’homme;Tim Silva;['818'];Anodin;
+Chef de meute des Jeannettes;Romy Rosemont;['310'];Anodin;
+Employée de l’aéroport;Lynn A Henderson;['803'];Anodin;
+Commentateur du combat ultime;Bruce Buffer;['324'];Anodin;
+Officier Handson;Mark Consuelos;['722'];Anodin;
+Samantha;Angela Wiser;['119'];Anodin;
+Homme en lune de miel;Shane Nickerson;['803'];Anodin;
+Sally;Elaine Hendrix;['903'];Anodin;
+Dr Gettlman;Gregory White;['903'];Anodin;
+Pompier #1;Greg Wrangler;['618'];Anodin;
+Tabitha;Carly Thomas;['912'];Anodin;
+Rick;Bill Stevenson;['601'];Anodin;
+Maria;Amber Smith;['404'];Anodin;
+Employé de la salle de sport;Brain Perry;['404'];Anodin;
+Premier mec du dortoir;Amil Raman;['624'];Anodin;
+Représentant de la compagnie aérienne;Brian Palermo;['1018'];Anodin;
+Homme dans le taxi;Jason Kravits;['1018'];Anodin;
+Pompier chez Phoebe;Jason Winston George;['712'];Anodin;
+Passager dans l’avion;Todd Glass;['523'];Anodin;
+Réceptionniste au cabinet du Dr Gettlman;Greta Seshita;['903'];Anodin;
+Gene Lester;Gregory Jbara;['1011'];Anodin;
+Hôtesse compagnie aérienne;Robin McDonald;['415'];Anodin;
+Kyle;Jim Wise;['518'];Anodin;
+Directrice de casting pour une publicité;Judy Kain;['518'];Anodin;
+Joueur saoul au casino;Frank Novak;['524'];Anodin;
+Sherman Whitfield;Peter Dennis;['302'];Anodin;
+Pompier #2;David Warshofsky;['618'];Anodin;
+Devon;Adamo Palladino;['415'];Anodin;
+Homme à la cigarette;Rocky McMurray;['414'];Anodin;
+Agent de sécurité au Caesar’s Palace;Rojai Holloway;['524'];Anodin;
+Sizemore;Mary Pat Gleason;['104'];Anodin;
+Kevin;Alan F. Smith;['909'];Anodin;
+Homme;Richard Lyons;['202'];Anodin;
+Tom;Doug Benson;['507'];Anodin;
+Professeur de claquettes;Karla Tamburrelli;['121'];Anodin;
+Serveur dans un restaurant;John Eric Bentley;['914'];Anodin;
+Vieille femme;Jeannette Miller;['524'];Anodin;
+Liam;Mark Thomas;['415'];Anodin;
+Responsable du plateau de télévision;Sandra Thigpen;['504'];Anodin;
+Zoe;Natasha Pearce;['624'];Anodin;
+Dr Schiff;Shawn Christian;['811'];Anodin;
+Premier client du matin du grand magasin;Lou Willis;['202'];Anodin;
+Responsable;Stan Sellers;['202'];Anodin;
+Docteur des urgences;Richard Penn;['814'];Anodin;
+Mr Tyler;Tucker Smallwood;['821'];Anodin;
+Réceptionniste de l’hôtel dans le Vermont;non créditée;['919'];Anodin;
+Dr Connelly;Andy Umberger;['922'];Anodin;
+La femme;Aixa Clemente;['818'];Anodin;
+Touriste cliente du Caesar’s Palace;Baillie Gernstein;['523'];Anodin;
+Serrurier appelé par Ross;Wesley Thompson;['811'];Anodin;
+Bill;Chris Payne Gilbert;['909'];Anodin;
+Invitée du mariage;Lela Lee;['711'];Anodin;
+Maître d’hôtel d’un grand restaurant;Tony Nichols;['624'];Anodin;
+Serveur au restaurant Iridium;Mailon Riviera;['711'];Anodin;
+Serveur au PhilloSophie;Spencer Cherashore;['205'];Anodin;
+Mr Bowmont;John Apicella;['624'];Anodin;
+Patrick;Chris Kennedy;['619'];Anodin;
+Seconde invitée du mariage;Gina Belafonte;['711'];Anodin;
+Cliente d’une boutique de prêt à porter;Tracy Silver;['922'];Anodin;
+Henrietta;Cyndi Martino;['1011'];Anodin;
+Fillette dans le cabinet du docteur;Ashley Holloway;['903'];Anodin;
+Assistante du Dr Gettlman;Angee Hughes;['903'];Anodin;
+Masseuse de Monica;non créditée;['814'];Anodin;
+Hôtesse dans l’avion;Lisa Jamie Cash;['523'];Anodin;
+Critique culinaire du Post;Tim Maculan;['821'];Anodin;
+Serveur dans un restaurant chic;Martin Yu;['808'];Anodin;
+Client du restaurant Javu;Keith Pillow;['919'];Anodin;
+Infirmière du service des tests de fertilité;Myra Turbey;['921'];Anodin;
+Concierge de l’hôtel;Christopher Liam Moore;['505'];Anodin;
+Directeur du Caesar’s Palace;James Paradise;['523'];Anodin;
+Patronne du salon de massage;Cherryl Francis Harrington;['404'];Anodin;
+Invité à la fête pour Howard;Stephon Fuller;['515'];Anodin;
+Client du restaurant Javu;Shayne Anderson;['919'];Anodin;
+Steve;Willie Garson;['515'];Anodin;
+Professeur d’art dramatique;Scott Richards;['821'];Anodin;
+Steven Fischer;Chris Young;['205'];Anodin;
+Réceptionniste de l’association de soutien aux enfants;Matt Winston;['1007'];Anodin;
+Invitée à la fête pour Howard;Linde Gibb;['515'];Anodin;
+Petit garçon dans le cabinet du docteur;Logan Hudson;['903'];Anodin;
+Installateur de protections enfant d’appartement;Timothy Starks;['916'];Anodin;
+Employé de l’agence d’adoption;Jim O’Heir;['1009'];Anodin;
+Serveur au restaurant;Jorge Luis Abreu;['1009'];Anodin;
+Ray;Jonathan Nichols;['820'];Anodin;
+Serveuse au Central Perk;Michelle Haurg;['722'];Anodin;
+Livreur de Pizza;Ryan Carlberg;['1011'];Anodin;
+Glenda;Iris Bahr;['1003'];Anodin;
+Invité à la fête pour Howard;David Dalton;['515'];Anodin;
+Homme du salon de bronzage;Luis Antonio Ramos;['1003'];Anodin;
+La femme qui accouche;Laura Margolis;['823'];Anodin;
+Autre passager dans l’avion;Vincent Boyle;['1018'];Anodin;

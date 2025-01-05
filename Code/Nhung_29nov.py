@@ -2,6 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
+import os
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
 url = "https://fr.wikipedia.org/wiki/Friends"
 
 ## Acteurs principaux
@@ -68,67 +73,137 @@ print(df_acteur.iloc[1])
 
 ## Acteurs secondaires
 
-# URL du site à scraper
 url = "https://www.fanfr.com/invites/friendsgeneration2.php?importance=Celebrite&actioninv=Rechercher"
 
-
-
-# URL de la page web
-url = "https://www.fanfr.com/invites/friendsgeneration2.php?importance=Celebrite&actioninv=Rechercher"
-
-# Envoi de la requête HTTP pour obtenir le contenu de la page
 response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
 
-if response.status_code == 200:
-    soup = BeautifulSoup(response.text, 'html.parser')
+paragraphs = soup.find_all('p')
 
-    # Listes pour stocker les données
-    personnages = []
-    acteurs = []
-    episodes_list = []
+data = []
+for p in paragraphs:
+    b_tags = p.find_all('b')
+    if len(b_tags) >= 2:
+        col1 = b_tags[0].get_text(strip=True)
+        col2 = b_tags[1].get_text(strip=True)
 
-    # Trouver toutes les sections <a> contenant le lien 'invite'
-    sections = soup.find_all('a', href=lambda href: href and 'invite' in href)
+        episode_links = []
+        for a in p.find_all('a', href=True):
+            if 'episode' in a['href']:
+                href_value = a['href'].split('=')[-1]
+                episode_links.append(href_value)
 
-    # Parcourir les sections
-    for i, section in enumerate(sections):
-        # Extraire le nom du personnage et de l'acteur (2 balises <b>)
-        b_tags = section.find_all_next('b', limit=2)
-
-        # Si la section contient des balises <b>, on les ajoute à la liste
-        if len(b_tags) >= 2:
-            personnage = b_tags[0].text.strip() if b_tags else 'Inconnu'
-            acteur = b_tags[1].text.strip() if b_tags else 'Inconnu'
-
-            personnages.append(personnage)
-            acteurs.append(acteur)
-
-            # Extraire les épisodes associés à cet invité
-            episodes = [ep['href'].split('=')[-1] for ep in section.find_all_next('a', href=lambda href: href and 'episode' in href)]
-            episodes_list.append(", ".join(episodes))
-
-    # Création du DataFrame
-    data = {
-        "Personnage": personnages,
-        "Acteur": acteurs,
-        "Episodes": episodes_list
-    }
-
-    # Organiser les données en commençant à partir du numéro 5
-    df = pd.DataFrame(data)
-    df.index = range(5, 5 + len(df))  # Commence à partir de 5
-
-    # Affichage du DataFrame
-    print(df)
-else:
-    print(f"Impossible d'accéder à la page, code erreur : {response.status_code}")
-
-# Supposons que 'df' soit le DataFrame contenant les colonnes 'personnage' et 'acteur'
-df = df[~((df['Personnage'].str.contains('fanfr.com', case=False, na=False)) &
-          (df['Acteur'].str.contains('Fan Club', case=False, na=False)))]
-
+        if "Cliquez" not in col1 and "Cliquez" not in col2:
+            data.append([col1, col2, episode_links])
+df = pd.DataFrame(data)
+df.columns = ['personnage', 'acteur','episode']
 df.to_csv("friends_data.csv", index=False, sep=";", encoding='utf-8')
+## Récupérer des liens des invités
+url = "https://www.fanfr.com/invites/"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+list_link = []
+links = soup.find_all('a',href=lambda href: href and 'friendsgeneration2.php?importance=' in href)
+for link in links:
+    result_link = "https://www.fanfr.com/invites/"+link['href']
+    list_link.append(result_link)
+## Fonction pour récupérer les données
+data = []
+def collect_data_from_page(html,group):
 
+    soup = BeautifulSoup(html, 'html.parser')
+    paragraphs = soup.find_all('p')
+    for p in paragraphs:
+        b_tags = p.find_all('b')
+        if len(b_tags) >= 2:
+            col1 = b_tags[0].get_text(strip=True)
+            col2 = b_tags[1].get_text(strip=True)
 
+            episode_links = []
+            for a in p.find_all('a', href=True):
+                if 'episode' in a['href']:
+                    href_value = a['href'].split('=')[-1]
+                    episode_links.append(href_value)
 
+            if "Cliquez" not in col1 and "Cliquez" not in col2:
+                data.append([col1, col2, episode_links,group])
+
+## Parcourir les liens pour récupérer les données
+
+data = []
+
+driver = webdriver.Chrome()
+
+try:
+    for url in list_link:
+        group = url.split('importance=')[-1].split('&action')[0]
+        print(f"On est à: {url}")
+
+        driver.get(url)
+        time.sleep(3)
+
+        collect_data_from_page(driver.page_source,group)
+
+        while True:
+            try:
+                next_button = driver.find_element(By.LINK_TEXT, "les invités suivants")
+                next_button.click()
+                time.sleep(3)
+                collect_data_from_page(driver.page_source,group)
+            except:
+                print("Done and next:")
+                break
+
+finally:
+    driver.quit()
+df = pd.DataFrame(data)
+df.columns = ['personnage', 'acteur','episode','group']
+df.to_csv("friends_data.csv", index=False, sep=";", encoding='utf-8')
+## Chercher la date de naissance
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Danh sách các tên
+names = ["Brad Pitt", "Angelina Jolie", "Leonardo DiCaprio"]
+
+# Khởi tạo trình duyệt
+driver = webdriver.Chrome()
+
+# Vòng lặp tìm kiếm và nhấp vào Wikipedia
+for name in names:
+    try:
+        # Mở trang tìm kiếm DuckDuckGo
+        driver.get("https://duckduckgo.com/")
+
+        # Tìm ô nhập liệu tìm kiếm
+        search_box = driver.find_element(By.NAME, "q")
+
+        # Nhập tên và nhấn Enter
+        search_box.send_keys(name + " site:wikipedia.org")
+        search_box.send_keys(Keys.RETURN)
+
+        # Chờ kết quả tải
+        time.sleep(3)
+
+        # Tìm liên kết đầu tiên chứa "wikipedia.org"
+        first_result = driver.find_element(By.XPATH, "(//a[contains(@href, 'wikipedia.org')])[1]")  # Tìm phần tử chứa liên kết Wikipedia
+        first_result.click()  # Nhấp vào liên kết đầu tiên
+        time.sleep(3)  # Chờ trang Wikipedia tải xong
+
+        # Trích xuất ngày tháng năm sinh từ infobox
+        try:
+            # Tìm infobox, phần chứa thông tin về ngày tháng năm sinh
+            birth_date_element = driver.find_element(By.XPATH, "//table[contains(@class, 'infobox')]//th[contains(text(), 'Born')]//following-sibling::td")
+            birth_date = birth_date_element.text
+            print(f"{name}: Ngày tháng năm sinh: {birth_date}")
+        except Exception as e:
+            print(f"Không tìm thấy ngày sinh của {name}: {e}")
+
+    except Exception as e:
+        print(f"Lỗi khi xử lý '{name}': {e}")
+
+# Đóng trình duyệt
+driver.quit()
 
