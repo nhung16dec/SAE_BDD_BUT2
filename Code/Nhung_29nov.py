@@ -1,11 +1,16 @@
 import requests
-from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 import os
+import time
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+os.chdir('U:/Documents/Sem3/SAE/BDD')
 os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
 url = "https://fr.wikipedia.org/wiki/Friends"
 
@@ -160,50 +165,36 @@ df = pd.DataFrame(data)
 df.columns = ['personnage', 'acteur','episode','group']
 df.to_csv("friends_data.csv", index=False, sep=";", encoding='utf-8')
 ## Chercher la date de naissance
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-import time
 
-# Danh sách các tên
-names = ["Brad Pitt", "Angelina Jolie", "Leonardo DiCaprio"]
-
-# Khởi tạo trình duyệt
 driver = webdriver.Chrome()
+data_acteur = pd.read_csv("friends_data.csv", sep = ";")
+data_acteur["date_naissance"] = None
+# Boucle pour traiter chaque nom
+for i in range(len(data_acteur)):
+    name = data_acteur.iloc[i,1]
+    # Ouvrir DuckDuckGo
+    driver.get("https://duckduckgo.com/")
 
-# Vòng lặp tìm kiếm và nhấp vào Wikipedia
-for name in names:
-    try:
-        # Mở trang tìm kiếm DuckDuckGo
-        driver.get("https://duckduckgo.com/")
+    # Trouver la barre de recherche et y entrer le nom de l'acteur
+    search_box = driver.find_element(By.NAME, "q")
+    search_box.send_keys(name + " wikipedia")
+    search_box.send_keys(Keys.RETURN)
 
-        # Tìm ô nhập liệu tìm kiếm
-        search_box = driver.find_element(By.NAME, "q")
+    # Récuperer le premier lien Wikipedia
+    first_result = driver.find_element(By.XPATH, "(//a[contains(@href, 'wikipedia.org')])[1]")
+    url_wiki = first_result.get_attribute("href")
 
-        # Nhập tên và nhấn Enter
-        search_box.send_keys(name + " site:wikipedia.org")
-        search_box.send_keys(Keys.RETURN)
+    # Utiliser la fonction pour extraire la date de naissance
+    birth_date = extract_birthday_from_url2(url_wiki)
+    if birth_date:
+        data_acteur.iloc[i,4] = birth_date
+    else:
+        birth_date = extract_birthday_from_url_fr(url_wiki)
+        if birth_date:
+            data_acteur.iloc[i,4] = birth_date
+    
 
-        # Chờ kết quả tải
-        time.sleep(3)
-
-        # Tìm liên kết đầu tiên chứa "wikipedia.org"
-        first_result = driver.find_element(By.XPATH, "(//a[contains(@href, 'wikipedia.org')])[1]")  # Tìm phần tử chứa liên kết Wikipedia
-        first_result.click()  # Nhấp vào liên kết đầu tiên
-        time.sleep(3)  # Chờ trang Wikipedia tải xong
-
-        # Trích xuất ngày tháng năm sinh từ infobox
-        try:
-            # Tìm infobox, phần chứa thông tin về ngày tháng năm sinh
-            birth_date_element = driver.find_element(By.XPATH, "//table[contains(@class, 'infobox')]//th[contains(text(), 'Born')]//following-sibling::td")
-            birth_date = birth_date_element.text
-            print(f"{name}: Ngày tháng năm sinh: {birth_date}")
-        except Exception as e:
-            print(f"Không tìm thấy ngày sinh của {name}: {e}")
-
-    except Exception as e:
-        print(f"Lỗi khi xử lý '{name}': {e}")
-
-# Đóng trình duyệt
+# Fermer le navigateur
 driver.quit()
+
 
