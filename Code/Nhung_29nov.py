@@ -1,17 +1,13 @@
 import requests
+from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 import os
-import time
-from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
+import time
+#os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
 os.chdir('U:/Documents/Sem3/SAE/BDD')
-os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
 url = "https://fr.wikipedia.org/wiki/Friends"
 
 ## Acteurs principaux
@@ -32,6 +28,21 @@ def extract_birthday_from_url(row):
     bday_act = get_element(url_act, tag, class_name).text
     bday_per = get_element(url_per, tag, class_name).text
     return pd.Series([bday_act, bday_per], index=['bday_act', 'bday_per'])
+
+def extract_birthday_from_url2(url_wiki):
+    class_name = 'nowrap bday'
+    tag = 'time'
+    bday_act = get_element(url_wiki, tag, class_name).text
+    return bday_act
+
+def extract_birthday_from_url_fr(url_wiki):
+    class_name = 'nowrap date-lien bday'
+    tag = 'time'
+    element = get_element(url_wiki, tag, class_name)
+    if element:
+        bday_act = element.get('datetime', element.text)
+        return bday_act
+
 
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
@@ -182,19 +193,18 @@ for i in range(len(data_acteur)):
 
     # Récuperer le premier lien Wikipedia
     first_result = driver.find_element(By.XPATH, "(//a[contains(@href, 'wikipedia.org')])[1]")
-    url_wiki = first_result.get_attribute("href")
-
-    # Utiliser la fonction pour extraire la date de naissance
-    birth_date = extract_birthday_from_url2(url_wiki)
-    if birth_date:
-        data_acteur.iloc[i,4] = birth_date
-    else:
-        birth_date = extract_birthday_from_url_fr(url_wiki)
+    if first_result:
+        url_wiki = first_result.get_attribute("href")
+        # Utiliser la fonction pour extraire la date de naissance
+        birth_date = extract_birthday_from_url2(url_wiki)
         if birth_date:
             data_acteur.iloc[i,4] = birth_date
-    
+        else:
+            birth_date = extract_birthday_from_url_fr(url_wiki)
+            if birth_date:
+                data_acteur.iloc[i,4] = birth_date
+
 
 # Fermer le navigateur
 driver.quit()
-
-
+##
