@@ -17,3 +17,4 @@
 Création un table des acteurs principaux, ainsi que leurs rôles, leurs dates de naissance. Scrapp from wikipédia (Nhung)
 
 19/12 : Création de notre database sur PgAdmin.
+![image](https://github.com/user-attachments/assets/a870845b-c4b3-415c-9bfb-39f89ee9e39f)
