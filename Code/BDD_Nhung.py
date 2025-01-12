@@ -1,0 +1,317 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import numpy as np
+import os
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
+import time
+os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
+#os.chdir('U:/Documents/Sem3/SAE/BDD')
+url = "https://fr.wikipedia.org/wiki/Friends"
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+## Fonctions:
+def get_element(url, tag, class_name):
+    page = requests.get(url)
+    soup = BeautifulSoup(page.text, 'html.parser')
+    element = soup.find(tag, class_ = class_name)
+    if element:
+        return element
+    else:
+        return "Erreur"
+
+def extract_birthday_from_url(row):
+    url_act = "https://fr.wikipedia.org" + row['URL_Act']
+    url_per = "https://fr.wikipedia.org" + row['URL_Per']
+    class_name = 'nowrap bday'
+    tag = 'time'
+    bday_act = get_element(url_act, tag, class_name).text
+    bday_per = get_element(url_per, tag, class_name).text
+    return pd.Series([bday_act, bday_per], index=['bday_act', 'bday_per'])
+
+def extract_birthday_from_url2(url_wiki):
+    class_name = 'nowrap bday'
+    tag = 'time'
+    bday_act = get_element(url_wiki, tag, class_name)
+    if bday_act == "Erreur":
+        class_name = 'nowrap date-lien bday'
+        bday_act = get_element(url_wiki, tag, class_name)
+    if bday_act == "Erreur":
+        class_name = 'nowrap date-lien'
+        bday_act = get_element(url_wiki, tag, class_name)
+    if bday_act == "Erreur":
+        bday_act = get_element(url_wiki, 'span', 'bday')
+    if bday_act != "Erreur":
+        return bday_act.text
+    else:
+        return None
+
+def get_birthday_from_name_wiki(name):
+    #chrome_options = Options()
+    #chrome_options.add_argument("--headless")
+    #driver = webdriver.Chrome(options=chrome_options)
+    driver.get("https://www.wikipedia.org/")
+    search_box = WebDriverWait(driver,1).until(
+    EC.element_to_be_clickable((By.NAME, "search"))
+    )
+    search_box.send_keys(name)
+    search_box.send_keys(Keys.RETURN)
+    url_wiki = driver.current_url
+    try:
+        birthday = extract_birthday_from_url2(url_wiki)
+    except Exception as e:
+        birthday = None
+    #driver.quit()
+    return birthday
+def get_birthday_from_name_duckduckgo(name):
+    #chrome_options = Options()
+    #chrome_options.add_argument("--headless")
+    #driver = webdriver.Chrome(options=chrome_options)
+    driver.get("https://www.duckduckgo.com")
+    search_box = driver.find_element(By.NAME, "q")
+    search_box.send_keys(name + " actor wikipedia")
+    search_box.send_keys(Keys.RETURN)
+    time.sleep(2)
+    try:
+        first_result = driver.find_element(By.XPATH, "(//a[contains(@href, 'wikipedia.org')])[1]")
+        if first_result:
+            driver.execute_script("arguments[0].click();", first_result)
+            time.sleep(5)
+            url_wiki = driver.current_url
+            birthday = extract_birthday_from_url2(url_wiki)
+        else:
+            birthday = None
+    except Exception as e:
+        birthday = None
+    #driver.quit()
+    return birthday
+
+data = []
+def collect_data_from_page(html,group):
+
+    soup = BeautifulSoup(html, 'html.parser')
+    paragraphs = soup.find_all('p')
+    for p in paragraphs:
+        b_tags = p.find_all('b')
+        if len(b_tags) >= 2:
+            col1 = b_tags[0].get_text(strip=True)
+            col2 = b_tags[1].get_text(strip=True)
+
+            episode_links = []
+            for a in p.find_all('a', href=True):
+                if 'episode' in a['href']:
+                    href_value = a['href'].split('=')[-1]
+                    episode_links.append(href_value)
+
+            if "Cliquez" not in col1 and "Cliquez" not in col2:
+                data.append([col1, col2, episode_links,group])
+
+## Acteurs principaux
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+table = soup.find('table', class_='wikitable centre')
+table = get_element(url,'table','wikitable centre')
+liste_act = []
+liste_URL_act = []
+liste_per = []
+liste_URL_per = []
+if table:
+    rows = table.find_all('tr')
+    for row in rows:
+        cols = row.find_all('td')
+        if len(cols) >= 2:
+            col1 = cols[0].get_text()
+            a_tag = cols[0].find('a')
+            if a_tag:
+                link_col1 = a_tag.get('href')
+            col2 = cols[1].get_text()
+            a_tag2 = cols[1].find('a')
+            if a_tag2:
+                link_col2 = a_tag2.get('href')
+            liste_act.append(col1)
+            liste_URL_act.append(link_col1)
+            liste_per.append(col2)
+            liste_URL_per.append(link_col2)
+else:
+    print("Erreur")
+df_acteur = pd.DataFrame({
+    'Act': liste_act,
+    'URL_Act': liste_URL_act,
+    'Per': liste_per,
+    'URL_Per': liste_URL_per
+})
+
+
+# Appliquer la fonction pour extraire les dates de naissance
+df_acteur[['bday_act', 'bday_per']] = df_acteur.apply(extract_birthday_from_url, axis=1)
+df_acteur['stt_invite'] = 0
+# Afficher le DataFrame final avec les dates de naissance
+print(df_acteur)
+#Vérifier
+print(df_acteur.iloc[1])
+
+## Acteurs secondaires
+
+url = "https://www.fanfr.com/invites/friendsgeneration2.php?importance=Celebrite&actioninv=Rechercher"
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+paragraphs = soup.find_all('p')
+
+data = []
+for p in paragraphs:
+    b_tags = p.find_all('b')
+    if len(b_tags) >= 2:
+        col1 = b_tags[0].get_text(strip=True)
+        col2 = b_tags[1].get_text(strip=True)
+
+        episode_links = []
+        for a in p.find_all('a', href=True):
+            if 'episode' in a['href']:
+                href_value = a['href'].split('=')[-1]
+                episode_links.append(href_value)
+
+        if "Cliquez" not in col1 and "Cliquez" not in col2:
+            data.append([col1, col2, episode_links])
+df = pd.DataFrame(data)
+df.columns = ['personnage', 'acteur','episode']
+df.to_csv("friends_data.csv", index=False, sep=";", encoding='utf-8')
+## Récupérer des liens des invités
+url = "https://www.fanfr.com/invites/"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+list_link = []
+links = soup.find_all('a',href=lambda href: href and 'friendsgeneration2.php?importance=' in href)
+for link in links:
+    result_link = "https://www.fanfr.com/invites/"+link['href']
+    list_link.append(result_link)
+
+# Parcourir les liens pour récupérer les données
+
+data = []
+
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options=chrome_options)
+
+try:
+    for url in list_link:
+        group = url.split('importance=')[-1].split('&action')[0]
+        print(f"On est à: {url}")
+
+        driver.get(url)
+        time.sleep(3)
+
+        collect_data_from_page(driver.page_source,group)
+
+        while True:
+            try:
+                next_button = driver.find_element(By.LINK_TEXT, "les invités suivants")
+                next_button.click()
+                time.sleep(3)
+                collect_data_from_page(driver.page_source,group)
+            except:
+                print("Done and next:")
+                break
+
+finally:
+    driver.quit()
+df = pd.DataFrame(data)
+df.columns = ['personnage', 'acteur','episode','group']
+df.to_csv("friends_data.csv", index=False, sep=";", encoding='utf-8')
+## Chercher la date de naissance avec wiki
+
+data_acteur = pd.read_csv("friends_data.csv", sep = ";")
+data_acteur["date_naissance"] = None
+
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options=chrome_options)
+
+# Boucle pour traiter chaque nom
+for i in range(len(data_acteur)):
+    if i % 50 == 0:
+        print("On traite la ligne", i+1)
+    name = data_acteur.iloc[i,1]
+    if 'non' in name:
+        print(name)
+    else:
+        birthday = get_birthday_from_name_wiki(name)
+
+        if birthday:
+            data_acteur.iloc[i,4] = birthday
+        else:
+            print(name)
+# Fermer le navigateur
+driver.quit()
+data_acteur.to_csv("friends_data_updated1201.csv", index=False, sep=";", encoding='utf-8')
+
+## Chercher la date de naissance p2
+data_acteur = pd.read_csv("friends_data_updated1201.csv", sep = ";")
+chrome_options = Options()
+#chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options=chrome_options)
+comp = 0
+# Boucle pour traiter chaque nom
+for i in range(610,len(data_acteur)):
+    if i % 50 == 0:
+        print("On traite la ligne", i+1)
+    bday = data_acteur.iloc[i,4]
+    name = data_acteur.iloc[i,1]
+    if type(bday) == float:
+
+        if "non crédité" in name:
+            print(name)
+        else:
+
+            birthday = get_birthday_from_name_duckduckgo(name)
+            if birthday:
+                data_acteur.iloc[i,4] = birthday
+                comp += 1
+
+            else:
+                print(name)
+print(comp)
+driver.quit()
+data_acteur.to_csv("friends_data_updated1201_2.csv", index=False, sep=";", encoding='utf-8')
+## Nettoyer les dates de naissance
+data_acteur = pd.read_csv("friends_data_updated1201_2.csv", sep = ";")
+data_acteur["date_naissance_nettoyee"] = None
+ensemble_mois= {
+    "janvier": "01", "février": "02", "mars": "03", "avril": "04", "mai": "05",
+    "juin": "06", "juillet": "07", "août": "08", "septembre": "09", "octobre": "10",
+    "novembre": "11", "décembre": "12"
+}
+for i in range(len(data_acteur)):
+    bday = data_acteur.iloc[i,4]
+    if type(bday) == float:
+        data_acteur.iloc[i,5] = None
+    elif len(bday) == 10:
+        data_acteur.iloc[i,5] = bday
+    else:
+        bday_list = bday.split()
+        ensemble_mois[bday_list[1]]
+        if bday_list[0] == '1er':
+            bday = "01/" + ensemble_mois[bday_list[1]] + "/" + bday_list[2]
+
+        else:
+            bday = bday_list[0] + "/" + ensemble_mois[bday_list[1]] + "/" + bday_list[2]
+        data_acteur.iloc[i,5] = bday
+
+data_acteur.to_csv("friends_data_updated1201_2.csv", index=False, sep=";", encoding='utf-8')
+## Créer le table contenir
+data_acteur = pd.read_csv("friends_data_updated1201_2.csv", sep = ";")
+i = 7
+list_ep = data_acteur.iloc[7,3]
+list_ep = list_ep.strip("[]").replace("'","")
+list_ep = list_ep.replace(" ","").split(',')
+columns = ['ID_ep', 'ID_personnage']
+contenir = pd.DataFrame(columns=columns)
+for ep in list_ep:
+    contenir.loc[len(contenir)] = [ep,data_acteur.iloc[7,1]]
+print(contenir)
