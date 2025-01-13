@@ -229,16 +229,14 @@ df.to_csv("friends_data.csv", index=False, sep=";", encoding='utf-8')
 data_acteur = pd.read_csv("friends_data.csv", sep = ";")
 data_acteur["date_naissance"] = None
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")
+chrome_options = Options() chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(options=chrome_options)
 
 # Boucle pour traiter chaque nom
 for i in range(len(data_acteur)):
     if i % 50 == 0:
         print("On traite la ligne", i+1)
-    name = data_acteur.iloc[i,1]
-    if 'non' in name:
+    name = data_acteur.iloc[i,1] if 'non crédité' in name:
         print(name)
     else:
         birthday = get_birthday_from_name_wiki(name)
@@ -248,9 +246,8 @@ for i in range(len(data_acteur)):
         else:
             print(name)
 # Fermer le navigateur
-driver.quit()
-data_acteur.to_csv("friends_data_updated1201.csv", index=False, sep=";", encoding='utf-8')
-
+driver.quit() data_acteur.to_csv("friends_data_updated1201.csv",
+index=False, sep=";", encoding='utf-8')
 ## Chercher la date de naissance p2
 data_acteur = pd.read_csv("friends_data_updated1201.csv", sep = ";")
 chrome_options = Options()
@@ -258,7 +255,7 @@ chrome_options = Options()
 driver = webdriver.Chrome(options=chrome_options)
 comp = 0
 # Boucle pour traiter chaque nom
-for i in range(610,len(data_acteur)):
+for i in range(len(data_acteur)):
     if i % 50 == 0:
         print("On traite la ligne", i+1)
     bday = data_acteur.iloc[i,4]
@@ -279,7 +276,7 @@ for i in range(610,len(data_acteur)):
 print(comp)
 driver.quit()
 data_acteur.to_csv("friends_data_updated1201_2.csv", index=False, sep=";", encoding='utf-8')
-## Nettoyer les dates de naissance
+## Nettoyer les dates de naissance de acteur
 data_acteur = pd.read_csv("friends_data_updated1201_2.csv", sep = ";")
 data_acteur["date_naissance_nettoyee"] = None
 ensemble_mois= {
@@ -304,6 +301,90 @@ for i in range(len(data_acteur)):
         data_acteur.iloc[i,5] = bday
 
 data_acteur.to_csv("friends_data_updated1201_2.csv", index=False, sep=";", encoding='utf-8')
+
+## Chercher la date de naissance de personnage
+data_acteur = pd.read_csv("friends_data_updated1201_2.csv", sep = ";")
+data_acteur["date_naissance_personnage"] = None #data_acteur.columns[10]
+
+chrome_options = Options()
+#chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options=chrome_options)
+# Boucle pour traiter chaque nom
+#for i in range(len(data_acteur)):
+#for i in range(6):
+    if i % 50 == 0:
+        print("On traite la ligne", i+1)
+    name = data_acteur.iloc[i,1]
+    if 'non crédité' in name:
+        print(name)
+    else:
+        birthday = get_birthday_from_name_duckduckgo(name)
+
+        if birthday:
+            data_acteur.iloc[i,10] = birthday
+        else:
+            print(name)
+# Fermer le navigateur
+driver.quit()
+data_acteur.to_csv("friends_data_updated1201_2.csv",index=False, sep=";", encoding='utf-8')
+
+## Nettoyer les dates de naissance de personnage
+data_acteur = pd.read_csv("friends_data_updated1201_2.csv", sep = ";")
+data_acteur["date_naissance_nettoyee"] = None
+ensemble_mois= {
+    "janvier": "01", "février": "02", "mars": "03", "avril": "04", "mai": "05",
+    "juin": "06", "juillet": "07", "août": "08", "septembre": "09", "octobre": "10",
+    "novembre": "11", "décembre": "12"
+}
+for i in range(len(data_acteur)):
+    bday = data_acteur.iloc[i,4]
+    if type(bday) == float:
+        data_acteur.iloc[i,5] = None
+    elif len(bday) == 10:
+        data_acteur.iloc[i,5] = bday
+    else:
+        bday_list = bday.split()
+        ensemble_mois[bday_list[1]]
+        if bday_list[0] == '1er':
+            bday = "01/" + ensemble_mois[bday_list[1]] + "/" + bday_list[2]
+
+        else:
+            bday = bday_list[0] + "/" + ensemble_mois[bday_list[1]] + "/" + bday_list[2]
+        data_acteur.iloc[i,5] = bday
+
+data_acteur.to_csv("friends_data_updated1201_2.csv", index=False, sep=";", encoding='utf-8')
+## Nettoyer les noms et prénoms
+data_acteur = pd.read_csv("friends_data_updated1201_2.csv", sep = ";")
+
+data_acteur['nom_personnage'] = None #data_acteur.columns[6]
+data_acteur['prenom_personnage'] = None #data_acteur.columns[7]
+data_acteur['nom_acteur'] = None #data_acteur.columns[8]
+data_acteur['prenom_acteur'] = None #data_acteur.columns[9]
+for i in range(len(data_acteur)):
+    nom_prenoms_personnage = data_acteur.iloc[i,1]
+    list_noms_p = nom_prenoms_personnage.split()
+    if len(list_noms_p) == 1:
+        nom_p = nom_prenoms_personnage
+    else:
+        nom_p = list_noms_p[-1]
+        index_nom_p = - (len(nom_p) + 1)
+        prenom_p = nom_prenoms_personnage[:index_nom_p]
+
+    nom_prenoms_acteur = data_acteur.iloc[i,2]
+    list_noms_a = nom_prenoms_acteur.split()
+    if len(list_noms_a) == 1:
+        nom_a = nom_prenoms_acteur
+    else:
+        nom_a = list_noms_a[-1]
+        index_nom_a = - (len(nom_a) + 1)
+        prenom_a = nom_prenoms_acteur[:index_nom_a]
+
+    data_acteur.iloc[i,6] = nom_p
+    data_acteur.iloc[i,7] = prenom_p
+    data_acteur.iloc[i,8] = nom_a
+    data_acteur.iloc[i,9] = prenom_a
+data_acteur.to_csv("friends_data_updated1201_2.csv", index=False, sep=";", encoding='utf-8')
+
 ## Créer le table contenir
 data_acteur = pd.read_csv("friends_data_updated1201_2.csv", sep = ";")
 i = 7
