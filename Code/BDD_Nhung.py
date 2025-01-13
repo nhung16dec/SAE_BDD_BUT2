@@ -8,8 +8,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
-os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
-#os.chdir('U:/Documents/Sem3/SAE/BDD')
+#os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
+os.chdir('U:/Documents/Sem3/SAE/BDD')
 url = "https://fr.wikipedia.org/wiki/Friends"
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -310,7 +310,7 @@ chrome_options = Options()
 #chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(options=chrome_options)
 # Boucle pour traiter chaque nom
-#for i in range(len(data_acteur)):
+for i in range(117):
 #for i in range(6):
     if i % 50 == 0:
         print("On traite la ligne", i+1)
@@ -387,12 +387,18 @@ data_acteur.to_csv("friends_data_updated1201_2.csv", index=False, sep=";", encod
 
 ## Créer le table contenir
 data_acteur = pd.read_csv("friends_data_updated1201_2.csv", sep = ";")
-i = 7
-list_ep = data_acteur.iloc[7,3]
-list_ep = list_ep.strip("[]").replace("'","")
-list_ep = list_ep.replace(" ","").split(',')
+episodes = pd.read_excel('episode.xlsx')
 columns = ['ID_ep', 'ID_personnage']
 contenir = pd.DataFrame(columns=columns)
-for ep in list_ep:
-    contenir.loc[len(contenir)] = [ep,data_acteur.iloc[7,1]]
-print(contenir)
+for i in range(len(data_acteur)):
+    list_ep = data_acteur.iloc[i,3]
+    if list_ep == "*":
+        for id_ep in range(len(episodes)):
+            contenir.loc[len(contenir)] = [episodes.iloc[id_ep,0],data_acteur.iloc[i,1]]
+
+    else:
+        list_ep = list_ep.strip("[]").replace("'","")
+        list_ep = list_ep.replace(" ","").split(',')
+        for ep in list_ep:
+            contenir.loc[len(contenir)] = [ep,data_acteur.iloc[i,1]]
+contenir.to_csv("contenir.csv", index=False, sep=";", encoding='utf-8')
