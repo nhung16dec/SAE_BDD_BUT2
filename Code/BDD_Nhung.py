@@ -3,13 +3,16 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 import os
+import csv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from openpyxl import load_workbook
 import time
-#os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
-os.chdir('U:/Documents/Sem3/SAE/BDD')
+import psycopg2
+os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
+#os.chdir('U:/Documents/Sem3/SAE/BDD')
 url = "https://fr.wikipedia.org/wiki/Friends"
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -388,17 +391,180 @@ data_acteur.to_csv("friends_data_updated1201_2.csv", index=False, sep=";", encod
 ## Créer le table contenir
 data_acteur = pd.read_csv("friends_data_updated1201_2.csv", sep = ";")
 episodes = pd.read_excel('episode.xlsx')
-columns = ['ID_ep', 'ID_personnage']
+columns = ['id_episode', 'id_personnage']
 contenir = pd.DataFrame(columns=columns)
 for i in range(len(data_acteur)):
     list_ep = data_acteur.iloc[i,3]
     if list_ep == "*":
         for id_ep in range(len(episodes)):
-            contenir.loc[len(contenir)] = [episodes.iloc[id_ep,0],data_acteur.iloc[i,1]]
+            contenir.loc[len(contenir)] = [episodes.iloc[id_ep,0],data_acteur.iloc[i,0]]
 
     else:
         list_ep = list_ep.strip("[]").replace("'","")
         list_ep = list_ep.replace(" ","").split(',')
         for ep in list_ep:
-            contenir.loc[len(contenir)] = [ep,data_acteur.iloc[i,1]]
+            contenir.loc[len(contenir)] = [ep,data_acteur.iloc[i,0]]
 contenir.to_csv("contenir.csv", index=False, sep=";", encoding='utf-8')
+
+## Alimenter la base de donnée
+# Connexion à la base PostgreSQL
+ma_connection = psycopg2.connect(
+    database="postgres",
+    user="postgres",
+    host="localhost",
+    password="nhung",
+    port="5434"
+)
+
+## TABLE ACTEUR ----> à ajouter la date de naissance dans db
+mon_curseur = ma_connection.cursor()
+# Charger le fichier Excel
+workbook = load_workbook(filename="acteur.xlsx")
+sheet = workbook.active  # Par défaut, on utilise la première feuille
+
+# Lire les données de la feuille Excel et créer une liste de tuples
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):  # Ignorer la première ligne (entêtes)
+    data.append(row)  # Chaque ligne devient un tuple (id_acteur, statut_invite, date_naissance_acteur, nom_acteur, prenom_acteur)
+
+# Insérer les données dans la table
+query = """
+INSERT INTO acteur (id_acteur, statut_invite, date_naissance_acteur, nom_acteur, prenom_acteur)
+VALUES (%s, %s, %s, %s, %s)
+"""
+mon_curseur.executemany(query, data)  # Utilisation de la liste de tuples
+
+# Valider les changements dans la base
+ma_connection.commit()
+print("Données insérées avec succès !")
+
+mon_curseur.close()
+
+## TABLE PERSONNAGE ---> à changer la longeur de prénom dans db
+mon_curseur = ma_connection.cursor()
+# Charger le fichier Excel
+workbook = load_workbook(filename="personnage.xlsx")
+sheet = workbook.active
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):
+    data.append(row)
+
+query = """
+INSERT INTO personnage (id_personnage, nom_personnage, prenom_personnage, date_naissance_personnage)
+VALUES (%s, %s, %s, %s)
+"""
+mon_curseur.executemany(query, data)  # Utilisation de la liste de tuples
+
+# Valider les changements dans la base
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+## TABLE SAIS0N---> à changer la longeur de resume_saison dans db et type de annee_saison dans fichier excel
+# Charger le fichier Excel
+ma_connection = psycopg2.connect(
+    database="postgres",
+    user="postgres",
+    host="localhost",
+    password="nhung",
+    port="5434"
+)
+mon_curseur = ma_connection.cursor()
+workbook = load_workbook(filename="saison.xlsx")
+sheet = workbook.active
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):
+    data.append(row)
+query = """
+INSERT INTO saison (id_saison, nom_saison, annee_saison, resume_saison)
+VALUES (%s, %s, %s, %s)
+"""
+mon_curseur.executemany(query, data)
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+## TABLE EPISODE---> à changer la longeur de resume_episode et nom_episode dans db
+ma_connection = psycopg2.connect(
+    database="postgres",
+    user="postgres",
+    host="localhost",
+    password="nhung",
+    port="5434"
+)
+mon_curseur = ma_connection.cursor()
+workbook = load_workbook(filename="episode.xlsx")
+sheet = workbook.active  # Par défaut, on utilise la première feuille
+
+# Lire les données de la feuille Excel et créer une liste de tuples
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):  # Ignorer la première ligne (entêtes)
+    data.append(row)  # Chaque ligne devient un tuple (id_acteur, statut_invite, date_naissance_acteur, nom_acteur, prenom_acteur)
+
+# Insérer les données dans la table
+query = """
+INSERT INTO episode (id_episode, num_episode, id_saison, nom_episode, resume_episode)
+VALUES (%s, %s, %s, %s, %s)
+"""
+mon_curseur.executemany(query, data)  # Utilisation de la liste de tuples
+
+# Valider les changements dans la base
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+## TABLE CONTENIR
+ma_connection = psycopg2.connect(
+    database="postgres",
+    user="postgres",
+    host="localhost",
+    password="nhung",
+    port="5434"
+)
+mon_curseur = ma_connection.cursor()
+data = []
+
+with open("contenir.csv" ,mode="r", encoding="utf-8") as csv_file:
+    csv_reader = csv.DictReader(csv_file,  delimiter=";")  # Lire en tant que dictionnaires
+    for row in csv_reader:
+        # Convertir le dictionnaire en tuple (id_acteur, statut_invite, date_naissance_acteur, nom_acteur, prenom_acteur)
+        data.append((
+            row['id_episode'],
+            row['id_personnage']
+        ))
+
+# Insérer les données dans la table
+query = """
+INSERT INTO contenir (id_episode, id_personnage)
+VALUES (%s, %s)
+"""
+mon_curseur.executemany(query, data)  # Utilisation de la liste de tuples
+
+# Valider les changements dans la base
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+## TABLE INTERPRETER
+ma_connection = psycopg2.connect(
+    database="postgres",
+    user="postgres",
+    host="localhost",
+    password="nhung",
+    port="5434"
+)
+mon_curseur = ma_connection.cursor()
+workbook = load_workbook(filename="interpreter.xlsx")
+sheet = workbook.active
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):
+    data.append(row)
+query = """
+INSERT INTO interpreter (id_personnage, id_acteur)
+VALUES (%s, %s)
+"""
+mon_curseur.executemany(query, data)
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
