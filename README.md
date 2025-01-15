@@ -20,3 +20,20 @@ Création un table des acteurs principaux, ainsi que leurs rôles, leurs dates d
 ![image](https://github.com/user-attachments/assets/a870845b-c4b3-415c-9bfb-39f89ee9e39f)
 
 https://lesvoyageurscinephiles.com/quels-sont-les-lieux-de-tournage-de-friends-que-lon-peut-visiter/
+
+15/01 : Alimentation des données dans la base de données sur Pgadmin
+    database="2025_SAE_Nhung_Jo_Artur",
+    user="admindbetu",
+    host='10.11.159.10',
+    password="admindbetu",
+    port="5432"
+15/01 : Exécution une requête pour répondre à la question: Chandler a eu combien de petites amies? Résultat: 12
+  SELECT COUNT (DISTINCT lier.id_personnage)
+		FROM relation
+		INNER JOIN lier
+		ON lier.id_relation = relation.id_relation
+		INNER JOIN personnage
+		ON lier.id_personnage_1 = personnage.id_personnage
+		WHERE nom_personnage = 'Bing'
+		AND type_relation = 'Petit%20Ami'
+  
