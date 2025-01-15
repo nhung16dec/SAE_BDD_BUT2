@@ -11,8 +11,8 @@ from selenium.webdriver.chrome.options import Options
 from openpyxl import load_workbook
 import time
 import psycopg2
-os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
-#os.chdir('U:/Documents/Sem3/SAE/BDD')
+#os.chdir('C:/Users/trann/Documents/IUT/sem 3/SAE/BDD')
+os.chdir('U:/Documents/Sem3/SAE/BDD')
 url = "https://fr.wikipedia.org/wiki/Friends"
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -415,7 +415,14 @@ ma_connection = psycopg2.connect(
     password="nhung",
     port="5434"
 )
-
+## Connexion à la base PostgreSQL à l'IUT
+ma_connection = psycopg2.connect(
+    database="2025_SAE_Nhung_Jo_Artur",
+    user="admindbetu",
+    host='10.11.159.10',
+    password="admindbetu",
+    port="5432"
+)
 ## TABLE ACTEUR ----> à ajouter la date de naissance dans db
 mon_curseur = ma_connection.cursor()
 # Charger le fichier Excel
@@ -439,7 +446,7 @@ ma_connection.commit()
 print("Données insérées avec succès !")
 
 mon_curseur.close()
-
+ma_connection.close()
 ## TABLE PERSONNAGE ---> à changer la longeur de prénom dans db
 mon_curseur = ma_connection.cursor()
 # Charger le fichier Excel
@@ -462,13 +469,7 @@ mon_curseur.close()
 ma_connection.close()
 ## TABLE SAIS0N---> à changer la longeur de resume_saison dans db et type de annee_saison dans fichier excel
 # Charger le fichier Excel
-ma_connection = psycopg2.connect(
-    database="postgres",
-    user="postgres",
-    host="localhost",
-    password="nhung",
-    port="5434"
-)
+
 mon_curseur = ma_connection.cursor()
 workbook = load_workbook(filename="saison.xlsx")
 sheet = workbook.active
@@ -485,13 +486,7 @@ print("Données insérées avec succès !")
 mon_curseur.close()
 ma_connection.close()
 ## TABLE EPISODE---> à changer la longeur de resume_episode et nom_episode dans db
-ma_connection = psycopg2.connect(
-    database="postgres",
-    user="postgres",
-    host="localhost",
-    password="nhung",
-    port="5434"
-)
+
 mon_curseur = ma_connection.cursor()
 workbook = load_workbook(filename="episode.xlsx")
 sheet = workbook.active  # Par défaut, on utilise la première feuille
@@ -514,20 +509,13 @@ print("Données insérées avec succès !")
 mon_curseur.close()
 ma_connection.close()
 ## TABLE CONTENIR
-ma_connection = psycopg2.connect(
-    database="postgres",
-    user="postgres",
-    host="localhost",
-    password="nhung",
-    port="5434"
-)
+
 mon_curseur = ma_connection.cursor()
 data = []
 
 with open("contenir.csv" ,mode="r", encoding="utf-8") as csv_file:
     csv_reader = csv.DictReader(csv_file,  delimiter=";")  # Lire en tant que dictionnaires
     for row in csv_reader:
-        # Convertir le dictionnaire en tuple (id_acteur, statut_invite, date_naissance_acteur, nom_acteur, prenom_acteur)
         data.append((
             row['id_episode'],
             row['id_personnage']
@@ -546,13 +534,7 @@ print("Données insérées avec succès !")
 mon_curseur.close()
 ma_connection.close()
 ## TABLE INTERPRETER
-ma_connection = psycopg2.connect(
-    database="postgres",
-    user="postgres",
-    host="localhost",
-    password="nhung",
-    port="5434"
-)
+
 mon_curseur = ma_connection.cursor()
 workbook = load_workbook(filename="interpreter.xlsx")
 sheet = workbook.active
@@ -564,6 +546,85 @@ INSERT INTO interpreter (id_personnage, id_acteur)
 VALUES (%s, %s)
 """
 mon_curseur.executemany(query, data)
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+## TABLE SITE WEB #sheet evaluer, effacer les formules de note_saison: 4.5*2
+
+workbook = load_workbook(filename="site_noter_evaluer.xlsx")
+
+sheet_site_web = workbook['site_web']
+sheet_noter = workbook['noter']
+sheet_evaluer = workbook['evaluer']
+
+data_site_web = []
+data_noter = []
+data_evaluer = []
+
+for row in sheet_site_web.iter_rows(min_row=2, values_only=True):
+    data_site_web.append(row)
+for row in sheet_noter.iter_rows(min_row=2, values_only=True):
+    data_noter.append(row)
+for row in sheet_evaluer.iter_rows(min_row=2, values_only=True):
+    data_evaluer.append(row)
+query_site_web = """
+INSERT INTO site_web (id_site, nom_site)
+VALUES (%s, %s)
+"""
+query_noter = """
+INSERT INTO noter (id_episode, id_site, note_episode, nb_votant)
+VALUES (%s, %s, %s, %s)
+"""
+query_evaluer = """
+INSERT INTO evaluer (id_saison, id_site, note_saison, nb_votes)
+VALUES (%s, %s, %s, %s)
+"""
+mon_curseur = ma_connection.cursor()
+#mon_curseur.executemany(query_site_web, data_site_web)
+#mon_curseur.executemany(query_noter, data_noter)
+mon_curseur.executemany(query_evaluer, data_evaluer)
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+### TABLE RELATION
+mon_curseur = ma_connection.cursor()
+workbook = load_workbook(filename="relation.xlsx")
+sheet = workbook.active
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):
+    data.append(row)
+query = """
+INSERT INTO relation (id_relation, type_relation)
+VALUES (%s, %s)
+"""
+mon_curseur.executemany(query, data)
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+### TABLE LIER
+mon_curseur = ma_connection.cursor()
+data = []
+with open("lier.csv" ,mode="r", encoding="utf-8") as csv_file:
+    csv_reader = csv.DictReader(csv_file,  delimiter=";")  # Lire en tant que dictionnaires
+    for row in csv_reader:
+        data.append((
+            row['ID_ep'],
+            row['ID_personnage'],
+            row['ID_personnage_1'],
+            row['ID_relation']
+        ))
+
+# Insérer les données dans la table
+query = """
+INSERT INTO lier (id_episode, id_personnage, id_personnage_1, id_relation)
+VALUES (%s, %s, %s, %s)
+"""
+mon_curseur.executemany(query, data)  # Utilisation de la liste de tuples
+
+# Valider les changements dans la base
 ma_connection.commit()
 print("Données insérées avec succès !")
 mon_curseur.close()
