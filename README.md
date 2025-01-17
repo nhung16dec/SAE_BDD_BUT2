@@ -37,3 +37,7 @@ https://lesvoyageurscinephiles.com/quels-sont-les-lieux-de-tournage-de-friends-q
 		WHERE nom_personnage = 'Bing'
 		AND type_relation = 'Petit%20Ami'
   
+![image](https://github.com/user-attachments/assets/fbb27713-5e61-4c4d-adcd-0ba8b5de3cfd)
+
+![image](https://github.com/user-attachments/assets/889e2052-c68a-4982-a299-469e6a72771d)
+
