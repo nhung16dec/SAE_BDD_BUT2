@@ -629,3 +629,95 @@ ma_connection.commit()
 print("Données insérées avec succès !")
 mon_curseur.close()
 ma_connection.close()
+### TABLE PAYS
+ma_connection = psycopg2.connect(
+    database="2025_SAE_Nhung_Jo_Artur",
+    user="admindbetu",
+    host='10.11.159.10',
+    password="admindbetu",
+    port="5432"
+)
+mon_curseur = ma_connection.cursor()
+workbook = load_workbook(filename="pays.xlsx")
+sheet = workbook.active
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):
+    data.append(row)
+query = """
+INSERT INTO pays (id_pays, nom_pays)
+VALUES (%s, %s)
+"""
+mon_curseur.executemany(query, data)
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+### TABLE VILLE
+ma_connection = psycopg2.connect(
+    database="2025_SAE_Nhung_Jo_Artur",
+    user="admindbetu",
+    host='10.11.159.10',
+    password="admindbetu",
+    port="5432"
+)
+mon_curseur = ma_connection.cursor()
+workbook = load_workbook(filename="ville.xlsx")
+sheet = workbook.active
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):
+    data.append(row)
+query = """
+INSERT INTO ville (id_ville, nom_ville, id_pays)
+VALUES (%s, %s, %s)
+"""
+mon_curseur.executemany(query, data)
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+### TABLE LIEU -> changer la longeur de nom_lieu
+ma_connection = psycopg2.connect(
+    database="2025_SAE_Nhung_Jo_Artur",
+    user="admindbetu",
+    host='10.11.159.10',
+    password="admindbetu",
+    port="5432"
+)
+mon_curseur = ma_connection.cursor()
+workbook = load_workbook(filename="lieu.xlsx")
+sheet = workbook.active
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):
+    data.append(row)
+query = """
+INSERT INTO lieu (id_lieu, nom_lieu, id_ville)
+VALUES (%s, %s, %s)
+"""
+mon_curseur.executemany(query, data)
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
+### TABLE SE_SITUER
+ma_connection = psycopg2.connect(
+    database="2025_SAE_Nhung_Jo_Artur",
+    user="admindbetu",
+    host='10.11.159.10',
+    password="admindbetu",
+    port="5432"
+)
+mon_curseur = ma_connection.cursor()
+workbook = load_workbook(filename="se_situer.xlsx")
+sheet = workbook.active
+data = []
+for row in sheet.iter_rows(min_row=2, values_only=True):
+    data.append(row)
+query = """
+INSERT INTO se_situer (id_episode, id_lieu)
+VALUES (%s, %s)
+"""
+mon_curseur.executemany(query, data)
+ma_connection.commit()
+print("Données insérées avec succès !")
+mon_curseur.close()
+ma_connection.close()
