@@ -1,3 +1,49 @@
+# Création d’une Base de Données SQL pour la Série Friends
+## Présentation du projet
+
+Ce projet a été réalisé en équipe de trois étudiants dans le cadre d’un module de Database.
+L’objectif est de collecter, nettoyer et stocker des informations sur la série télévisée Friends — notamment les acteurs, les épisodes et les saisons — à l’aide de BeautifulSoup, Python et PostgreSQL.
+Le projet met en place une chaîne ETL complète (Extract – Transform – Load) depuis l’extraction web jusqu’au chargement dans la base de données et la vérification des données.
+
+## Structure du projet
+
+### Création du MCD
+
+### Extraction
+
+Utilisation de BeautifulSoup pour récupérer les informations depuis les sources Internet :
+
+- Acteurs : nom d'acteur, nom de personnage, date de naissance d'acteur, date de naissance de personnage .
+- Épisodes : titre, rating, numéro de saison.
+- Lieu de tournage
+
+### Transformation
+
+- Nettoyage et harmonisation des données : Suppression des doublons et des valeurs manquantes.
+- Uniformisation des formats de date.
+- Création de tables relationnelles cohérentes (acteurs, épisodes, saisons).
+
+### Chargement
+
+- Création des tables PostgreSQL.
+- Insertion des données nettoyées à l’aide de psycopg2.
+
+### Tests
+
+- Requêtes SQL utilisées pour vérifier la base
+
+### Bilan et apprentissages
+
+- Mise en œuvre d’un pipeline ETL complet en Python.
+- Pratique de web scraping avancé avec BeautifulSoup.
+- Conception d’une base de données relationnelle sous PostgreSQL.
+- Travail collaboratif.
+
+## Journal de bord 
+
+Cette section présente l’historique de nos travaux en équipe.
+**Lecture non recommandée en dehors du suivi de projet.**
+
 27/09 : formation du groupe 4 composé de Nhung Tran, Artur Abgarov, Valentin Lopez. Choix de la série : Friends (tiré au hasard). Recherche de sites sources (Wikipedia, Google, Allocine, Annuseries, Senscritique, fanfr).
 
 30/09 : Création d'un MCD.
