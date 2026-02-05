@@ -67,12 +67,9 @@ Création un table des acteurs principaux, ainsi que leurs rôles, leurs dates d
 
 https://lesvoyageurscinephiles.com/quels-sont-les-lieux-de-tournage-de-friends-que-lon-peut-visiter/
 
-15/01 : Alimentation des données dans la base de données sur Pgadmin
+15/01 : Alimentation des données dans la base de données sur la base Postgre de l'école
     database="2025_SAE_Nhung_Jo_Artur",
-    user="admindbetu",
-    host='10.11.159.10',
-    password="admindbetu",
-    port="5432"
+    
 15/01 : Exécution une requête pour répondre à la question: Chandler a eu combien de petites amies? Résultat: 12
   SELECT COUNT (DISTINCT lier.id_personnage)
 		FROM relation
